@@ -1,0 +1,41 @@
+/////////PLANNINGS FOR JUNGLE//////////
+
+MODELS
+-User
+-Post
+    -Statement
+    -Question
+-Response
+    -Comment
+    -Answer
+-Feed
+
+
+
+USER
+-phoneNumber (NSString)
+
+POST
+-user (User)
+-image (UIImage)
+-content (NSString)
+
+STATEMENT (extends Post)
+-comments (NSArray of type Comment)
+
+QUESTION (extends Post)
+-anwers (NSArray of type Answer)
+
+RESPONSE
+-user (User)
+-content (NSString)
+
+ANSWER (extends Response)
+-
+
+COMMENT (extends Response)
+-
+
+FEED
+-user (User)
+-posts (NSArray of type Post)

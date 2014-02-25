@@ -19,6 +19,11 @@
 		C455033E18BCB48D00E394A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032618BCB48D00E394A3 /* UIKit.framework */; };
 		C455034618BCB48D00E394A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C455034418BCB48D00E394A3 /* InfoPlist.strings */; };
 		C455034818BCB48D00E394A3 /* HelloJungleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C455034718BCB48D00E394A3 /* HelloJungleTests.m */; };
+		C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */; };
+		C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C455035418BCB58C00E394A3 /* HomeViewController.m */; };
+		C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4BA30C018BD5F28003FB8FE /* Planning.txt */; };
+		C4BA30C518BD5FE9003FB8FE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C418BD5FE9003FB8FE /* User.m */; };
+		C4BA30C818BD604E003FB8FE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C718BD604E003FB8FE /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,14 @@
 		C455034318BCB48D00E394A3 /* HelloJungleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloJungleTests-Info.plist"; sourceTree = "<group>"; };
 		C455034518BCB48D00E394A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C455034718BCB48D00E394A3 /* HelloJungleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloJungleTests.m; sourceTree = "<group>"; };
+		C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C455035318BCB58C00E394A3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C455035418BCB58C00E394A3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C4BA30C018BD5F28003FB8FE /* Planning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Planning.txt; sourceTree = "<group>"; };
+		C4BA30C318BD5FE9003FB8FE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C4BA30C418BD5FE9003FB8FE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C4BA30C618BD604E003FB8FE /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		C4BA30C718BD604E003FB8FE /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +120,12 @@
 		C455032818BCB48D00E394A3 /* HelloJungle */ = {
 			isa = PBXGroup;
 			children = (
-				C455033118BCB48D00E394A3 /* AppDelegate.h */,
-				C455033218BCB48D00E394A3 /* AppDelegate.m */,
+				C4BA30C218BD5FAA003FB8FE /* Models */,
+				C4BA30BF18BD5EE7003FB8FE /* Psuedo */,
+				C4BA30BE18BD5ED9003FB8FE /* Images */,
+				C4BA30BD18BD5EBE003FB8FE /* Interface */,
+				C4BA30BC18BD5EAB003FB8FE /* AppDelegate */,
+				C455035618BCB59A00E394A3 /* ViewControllers */,
 				C455033418BCB48D00E394A3 /* Images.xcassets */,
 				C455032918BCB48D00E394A3 /* Supporting Files */,
 			);
@@ -142,6 +159,58 @@
 				C455034418BCB48D00E394A3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C455035618BCB59A00E394A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C455035318BCB58C00E394A3 /* HomeViewController.h */,
+				C455035418BCB58C00E394A3 /* HomeViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4BA30BC18BD5EAB003FB8FE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C455033118BCB48D00E394A3 /* AppDelegate.h */,
+				C455033218BCB48D00E394A3 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C4BA30BD18BD5EBE003FB8FE /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		C4BA30BE18BD5ED9003FB8FE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C4BA30BF18BD5EE7003FB8FE /* Psuedo */ = {
+			isa = PBXGroup;
+			children = (
+				C4BA30C018BD5F28003FB8FE /* Planning.txt */,
+			);
+			name = Psuedo;
+			sourceTree = "<group>";
+		};
+		C4BA30C218BD5FAA003FB8FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4BA30C318BD5FE9003FB8FE /* User.h */,
+				C4BA30C418BD5FE9003FB8FE /* User.m */,
+				C4BA30C618BD604E003FB8FE /* Post.h */,
+				C4BA30C718BD604E003FB8FE /* Post.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */,
+				C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */,
 				C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */,
 				C455033518BCB48D00E394A3 /* Images.xcassets in Resources */,
 			);
@@ -239,8 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BA30C818BD604E003FB8FE /* Post.m in Sources */,
+				C4BA30C518BD5FE9003FB8FE /* User.m in Sources */,
 				C455033318BCB48D00E394A3 /* AppDelegate.m in Sources */,
 				C455032F18BCB48D00E394A3 /* main.m in Sources */,
+				C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +515,7 @@
 				C455034D18BCB48D00E394A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C455034E18BCB48D00E394A3 /* Build configuration list for PBXNativeTarget "HelloJungleTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +524,7 @@
 				C455035018BCB48D00E394A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
