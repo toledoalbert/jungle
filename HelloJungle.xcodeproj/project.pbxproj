@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C455032318BCB48D00E394A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032218BCB48D00E394A3 /* Foundation.framework */; };
+		C455032518BCB48D00E394A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032418BCB48D00E394A3 /* CoreGraphics.framework */; };
+		C455032718BCB48D00E394A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032618BCB48D00E394A3 /* UIKit.framework */; };
+		C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C455032B18BCB48D00E394A3 /* InfoPlist.strings */; };
+		C455032F18BCB48D00E394A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C455032E18BCB48D00E394A3 /* main.m */; };
+		C455033318BCB48D00E394A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C455033218BCB48D00E394A3 /* AppDelegate.m */; };
+		C455033518BCB48D00E394A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C455033418BCB48D00E394A3 /* Images.xcassets */; };
+		C455033C18BCB48D00E394A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455033B18BCB48D00E394A3 /* XCTest.framework */; };
+		C455033D18BCB48D00E394A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032218BCB48D00E394A3 /* Foundation.framework */; };
+		C455033E18BCB48D00E394A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032618BCB48D00E394A3 /* UIKit.framework */; };
+		C455034618BCB48D00E394A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C455034418BCB48D00E394A3 /* InfoPlist.strings */; };
+		C455034818BCB48D00E394A3 /* HelloJungleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C455034718BCB48D00E394A3 /* HelloJungleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C455033F18BCB48D00E394A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C455031718BCB48D00E394A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C455031E18BCB48D00E394A3;
+			remoteInfo = HelloJungle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C455031F18BCB48D00E394A3 /* HelloJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C455032218BCB48D00E394A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C455032418BCB48D00E394A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C455032618BCB48D00E394A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C455032A18BCB48D00E394A3 /* HelloJungle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloJungle-Info.plist"; sourceTree = "<group>"; };
+		C455032C18BCB48D00E394A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C455032E18BCB48D00E394A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C455033018BCB48D00E394A3 /* HelloJungle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloJungle-Prefix.pch"; sourceTree = "<group>"; };
+		C455033118BCB48D00E394A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C455033218BCB48D00E394A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C455033418BCB48D00E394A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C455033A18BCB48D00E394A3 /* HelloJungleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloJungleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C455033B18BCB48D00E394A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C455034318BCB48D00E394A3 /* HelloJungleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloJungleTests-Info.plist"; sourceTree = "<group>"; };
+		C455034518BCB48D00E394A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C455034718BCB48D00E394A3 /* HelloJungleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloJungleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C455031C18BCB48D00E394A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455032518BCB48D00E394A3 /* CoreGraphics.framework in Frameworks */,
+				C455032718BCB48D00E394A3 /* UIKit.framework in Frameworks */,
+				C455032318BCB48D00E394A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C455033718BCB48D00E394A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455033C18BCB48D00E394A3 /* XCTest.framework in Frameworks */,
+				C455033E18BCB48D00E394A3 /* UIKit.framework in Frameworks */,
+				C455033D18BCB48D00E394A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C455031618BCB48D00E394A3 = {
+			isa = PBXGroup;
+			children = (
+				C455032818BCB48D00E394A3 /* HelloJungle */,
+				C455034118BCB48D00E394A3 /* HelloJungleTests */,
+				C455032118BCB48D00E394A3 /* Frameworks */,
+				C455032018BCB48D00E394A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C455032018BCB48D00E394A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C455031F18BCB48D00E394A3 /* HelloJungle.app */,
+				C455033A18BCB48D00E394A3 /* HelloJungleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C455032118BCB48D00E394A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C455032218BCB48D00E394A3 /* Foundation.framework */,
+				C455032418BCB48D00E394A3 /* CoreGraphics.framework */,
+				C455032618BCB48D00E394A3 /* UIKit.framework */,
+				C455033B18BCB48D00E394A3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C455032818BCB48D00E394A3 /* HelloJungle */ = {
+			isa = PBXGroup;
+			children = (
+				C455033118BCB48D00E394A3 /* AppDelegate.h */,
+				C455033218BCB48D00E394A3 /* AppDelegate.m */,
+				C455033418BCB48D00E394A3 /* Images.xcassets */,
+				C455032918BCB48D00E394A3 /* Supporting Files */,
+			);
+			path = HelloJungle;
+			sourceTree = "<group>";
+		};
+		C455032918BCB48D00E394A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C455032A18BCB48D00E394A3 /* HelloJungle-Info.plist */,
+				C455032B18BCB48D00E394A3 /* InfoPlist.strings */,
+				C455032E18BCB48D00E394A3 /* main.m */,
+				C455033018BCB48D00E394A3 /* HelloJungle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C455034118BCB48D00E394A3 /* HelloJungleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C455034718BCB48D00E394A3 /* HelloJungleTests.m */,
+				C455034218BCB48D00E394A3 /* Supporting Files */,
+			);
+			path = HelloJungleTests;
+			sourceTree = "<group>";
+		};
+		C455034218BCB48D00E394A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C455034318BCB48D00E394A3 /* HelloJungleTests-Info.plist */,
+				C455034418BCB48D00E394A3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C455031E18BCB48D00E394A3 /* HelloJungle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C455034B18BCB48D00E394A3 /* Build configuration list for PBXNativeTarget "HelloJungle" */;
+			buildPhases = (
+				C455031B18BCB48D00E394A3 /* Sources */,
+				C455031C18BCB48D00E394A3 /* Frameworks */,
+				C455031D18BCB48D00E394A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloJungle;
+			productName = HelloJungle;
+			productReference = C455031F18BCB48D00E394A3 /* HelloJungle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C455033918BCB48D00E394A3 /* HelloJungleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C455034E18BCB48D00E394A3 /* Build configuration list for PBXNativeTarget "HelloJungleTests" */;
+			buildPhases = (
+				C455033618BCB48D00E394A3 /* Sources */,
+				C455033718BCB48D00E394A3 /* Frameworks */,
+				C455033818BCB48D00E394A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C455034018BCB48D00E394A3 /* PBXTargetDependency */,
+			);
+			name = HelloJungleTests;
+			productName = HelloJungleTests;
+			productReference = C455033A18BCB48D00E394A3 /* HelloJungleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C455031718BCB48D00E394A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Albert Toledo";
+				TargetAttributes = {
+					C455033918BCB48D00E394A3 = {
+						TestTargetID = C455031E18BCB48D00E394A3;
+					};
+				};
+			};
+			buildConfigurationList = C455031A18BCB48D00E394A3 /* Build configuration list for PBXProject "HelloJungle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C455031618BCB48D00E394A3;
+			productRefGroup = C455032018BCB48D00E394A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C455031E18BCB48D00E394A3 /* HelloJungle */,
+				C455033918BCB48D00E394A3 /* HelloJungleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C455031D18BCB48D00E394A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */,
+				C455033518BCB48D00E394A3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C455033818BCB48D00E394A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455034618BCB48D00E394A3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C455031B18BCB48D00E394A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455033318BCB48D00E394A3 /* AppDelegate.m in Sources */,
+				C455032F18BCB48D00E394A3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C455033618BCB48D00E394A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C455034818BCB48D00E394A3 /* HelloJungleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C455034018BCB48D00E394A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C455031E18BCB48D00E394A3 /* HelloJungle */;
+			targetProxy = C455033F18BCB48D00E394A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C455032B18BCB48D00E394A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C455032C18BCB48D00E394A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C455034418BCB48D00E394A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C455034518BCB48D00E394A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C455034918BCB48D00E394A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C455034A18BCB48D00E394A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C455034C18BCB48D00E394A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJungle/HelloJungle-Prefix.pch";
+				INFOPLIST_FILE = "HelloJungle/HelloJungle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C455034D18BCB48D00E394A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJungle/HelloJungle-Prefix.pch";
+				INFOPLIST_FILE = "HelloJungle/HelloJungle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C455034F18BCB48D00E394A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloJungle.app/HelloJungle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJungle/HelloJungle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HelloJungleTests/HelloJungleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C455035018BCB48D00E394A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloJungle.app/HelloJungle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJungle/HelloJungle-Prefix.pch";
+				INFOPLIST_FILE = "HelloJungleTests/HelloJungleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C455031A18BCB48D00E394A3 /* Build configuration list for PBXProject "HelloJungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C455034918BCB48D00E394A3 /* Debug */,
+				C455034A18BCB48D00E394A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C455034B18BCB48D00E394A3 /* Build configuration list for PBXNativeTarget "HelloJungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C455034C18BCB48D00E394A3 /* Debug */,
+				C455034D18BCB48D00E394A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C455034E18BCB48D00E394A3 /* Build configuration list for PBXNativeTarget "HelloJungleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C455034F18BCB48D00E394A3 /* Debug */,
+				C455035018BCB48D00E394A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C455031718BCB48D00E394A3 /* Project object */;
+}
