@@ -12,6 +12,7 @@
 @interface HomeViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet FUIButton *buttonNewPost;
+@property (strong, nonatomic) IBOutlet FUIButton *buttonAnswerComment;
 
 
 

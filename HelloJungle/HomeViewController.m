@@ -24,9 +24,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	//Style the buttons.
      _buttonNewPost.buttonColor = [UIColor turquoiseColor];
     [_buttonNewPost setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    
+    _buttonAnswerComment.buttonColor = [UIColor turquoiseColor];
+    [_buttonAnswerComment setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
