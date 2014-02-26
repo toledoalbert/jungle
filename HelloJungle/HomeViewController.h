@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlatUIKit.h"
 
 @interface HomeViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIButton *buttonNewPost;
-@property (strong, nonatomic) IBOutlet UIButton *buttonAnswerComment;
+@property (strong, nonatomic) IBOutlet FUIButton *buttonNewPost;
 
-- (IBAction)answerComment:(id)sender;
-- (IBAction)newPost:(id)sender;
 
 
 @end

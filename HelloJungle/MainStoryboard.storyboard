@@ -16,15 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-9y-UQd">
-                                <rect key="frame" x="26" y="25" width="269" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-9y-UQd" customClass="FUIButton">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="newPost:" destination="znd-QO-WKi" eventType="touchUpInside" id="MIO-sS-yxS"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-Em-sya">
                                 <rect key="frame" x="26" y="493" width="269" height="55"/>
@@ -32,9 +29,6 @@
                                 <state key="normal" title="Answer or Comment">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="answerComment:" destination="znd-QO-WKi" eventType="touchUpInside" id="y5L-R3-ibY"/>
-                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-OQ-gUm">
                                 <rect key="frame" x="-55" y="99" width="430" height="356"/>
@@ -50,8 +44,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="buttonAnswerComment" destination="TBH-Em-sya" id="b2t-qi-pba"/>
-                        <outlet property="buttonNewPost" destination="TGn-9y-UQd" id="eYy-NW-h3P"/>
+                        <outlet property="buttonNewPost" destination="TGn-9y-UQd" id="POq-Qx-RWG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHM-DV-W1p" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,10 +7,7 @@
 //
 
 #import "HomeViewController.h"
-
-@interface HomeViewController ()
-
-@end
+#import "FlatUIKit.h"
 
 @implementation HomeViewController
 
@@ -19,8 +16,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        _buttonNewPost.backgroundColor = [UIColor yellowColor];
-        _buttonAnswerComment.backgroundColor = [UIColor blueColor];
         
     }
     return self;
@@ -30,6 +25,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+     _buttonNewPost.buttonColor = [UIColor turquoiseColor];
+    [_buttonNewPost setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
