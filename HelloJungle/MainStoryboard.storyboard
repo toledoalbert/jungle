@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0qm-3D-e9c" kind="push" id="csF-kS-Osh"/>
+                                    <segue destination="0qm-3D-e9c" kind="push" id="MBj-qA-x73"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-bJ-FCp" customClass="SwipeView">
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHM-DV-W1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-339" y="-280"/>
+            <point key="canvasLocation" x="-169" y="-288"/>
         </scene>
         <!--Response View Controller-->
         <scene sceneID="19l-0B-lrl">
@@ -73,13 +73,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="znd-QO-WKi" kind="push" id="zjV-I8-QNi"/>
+                                    <action selector="returnToHomeView:" destination="0qm-3D-e9c" eventType="touchUpInside" id="grs-0T-HI0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yeB-4K-Wkn"/>
+                    <connections>
+                        <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
