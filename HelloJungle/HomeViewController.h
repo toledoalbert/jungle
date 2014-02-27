@@ -23,6 +23,8 @@
 //Attributes for data
 @property (strong, nonatomic) User *currentUser; //Most of the data will come from User's attributes.
 @property (strong, nonatomic) Feed *usersFeed;
+@property (strong, nonatomic) IBOutlet UILabel *labelQuestion;
+@property (strong, nonatomic) IBOutlet UIImageView *postImage;
 
 
 @end
