@@ -14,8 +14,6 @@
 //Attributes - Buttons
 @property (weak, nonatomic) IBOutlet FUIButton *returnToHomeScreen;
 
-//Attributes - Labels
-@property (weak, nonatomic) IBOutlet UILabel *CommentLabel; // not used
 
 //Attributes - View Controllers
 @property (weak, nonatomic) IBOutlet UIView *commentSubViewController;
