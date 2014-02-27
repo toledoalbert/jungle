@@ -7,12 +7,14 @@
 //
 
 #import "ResponseViewController.h"
+#import "SubResponseViewController.h"
 
 @interface ResponseViewController ()
 
 @end
 
-@implementation ResponseViewController
+@implementation ResponseViewController;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +24,7 @@
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -33,7 +36,7 @@
     
     //Hiding the Navigation control bar.
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
+
     //Styling Homescreen button
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
     [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
@@ -57,5 +60,25 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     
+}
+//method that animates the view controller
+- (IBAction)animateViewController:(id)sender
+{
+    SubResponseViewController *controller = (SubResponseViewController *)self.childViewControllers.firstObject;
+    
+    controller.view.backgroundColor = [UIColor blueColor];
+    
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"commentSegueTransition"])
+    {
+        
+        
+        
+        
+    }
 }
 @end

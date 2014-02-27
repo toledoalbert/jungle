@@ -9,16 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
 
-@interface ResponseViewController : UIViewController
+
+@interface ResponseViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
 //Attributes - Buttons
 @property (weak, nonatomic) IBOutlet FUIButton *returnToHomeScreen;
 
+//Attributes - Segues
+
+
+//Attributes - Container view
+@property (weak, nonatomic) IBOutlet UIView *commentSubViewController;
 
 //Attributes - View Controllers
-@property (weak, nonatomic) IBOutlet UIView *commentSubViewController;
+@property (strong, nonatomic) UIViewController *subResponseViewController;
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;
+- (IBAction)animateViewController:(id)sender;
 
 @end

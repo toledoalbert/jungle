@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1Fh-wJ-b7o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1Fh-wJ-b7o">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -85,9 +85,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="KXV-QJ-aO0" kind="embed" id="5PB-Ig-6D4"/>
+                                    <segue destination="KXV-QJ-aO0" kind="embed" identifier="containerSegue" id="E1l-MU-RfS"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fc-RX-MUj">
+                                <rect key="frame" x="137" y="106" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Animate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateViewController:" destination="0qm-3D-e9c" eventType="touchUpInside" id="mgB-Nu-aVP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -95,6 +105,7 @@
                     <connections>
                         <outlet property="commentSubViewController" destination="c2f-SD-d9a" id="Biw-in-pp9"/>
                         <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
+                        <segue destination="KXV-QJ-aO0" kind="modal" identifier="commentSegueTransition" animates="NO" id="DyK-LM-jSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,16 +156,16 @@
             </objects>
             <point key="canvasLocation" x="850" y="-75"/>
         </scene>
-        <!--View Controller-->
+        <!--Sub Response View Controller-->
         <scene sceneID="Bvg-wC-v8J">
             <objects>
-                <viewController id="KXV-QJ-aO0" customClass="SubResponseViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="subViewControllerRestore" storyboardIdentifier="subViewController" id="KXV-QJ-aO0" customClass="SubResponseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y32-Bu-B8K"/>
                         <viewControllerLayoutGuide type="bottom" id="FtJ-PZ-ztl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IXB-P9-uDA">
-                        <rect key="frame" x="0.0" y="0.0" width="291" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-6d-riR">
@@ -172,12 +183,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1I-2w-hEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="1021"/>
+            <point key="canvasLocation" x="923" y="1013"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r3q-P3-1Nw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Fh-wJ-b7o" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainStoryBoard" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Fh-wJ-b7o" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7S5-dx-BCO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -198,4 +209,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="DyK-LM-jSw"/>
+    </inferredMetricsTieBreakers>
 </document>
