@@ -72,6 +72,13 @@
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 2;
     _swipeView.truncateFinalPage = YES;
+    //Removing the Background "back" button
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton=YES;
+    
+    //Hiding the Navigation control bar.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
