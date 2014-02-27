@@ -27,13 +27,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //Hiding the Background "back" button
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton=YES;
+    
+    //Hiding the Navigation control bar.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     //Styling Homescreen button
-    _buttonReturnToHomeView.buttonColor = [UIColor turquoiseColor];
-    [_buttonReturnToHomeView setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
+    [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     
-    _buttonReturnToHomeView.buttonColor = [UIColor turquoiseColor];
-    [_buttonReturnToHomeView setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
+    [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    
+    
 
 }
 
@@ -43,4 +51,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)returnToHomeView:(id)sender
+{
+    //Poping a view controller from the navigation controller - (Returning to the homescreen)
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
 @end

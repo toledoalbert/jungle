@@ -30,6 +30,14 @@
     
     _buttonAnswerComment.buttonColor = [UIColor turquoiseColor];
     [_buttonAnswerComment setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    
+    //Removing the Background "back" button
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton=YES;
+    
+    //Hiding the Navigation control bar.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,8 @@
 @interface ResponseViewController : UIViewController
 
 //Attributes - Buttons
-@property (strong, nonatomic) IBOutlet FUIButton *buttonReturnToHomeView;
+@property (weak, nonatomic) IBOutlet FUIButton *returnToHomeScreen;
+
+- (IBAction)returnToHomeView:(id)sender;
 
 @end
