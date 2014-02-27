@@ -19,8 +19,6 @@
 @property (strong, nonatomic) IBOutlet FUIButton *buttonNewPost;
 @property (strong, nonatomic) IBOutlet FUIButton *buttonAnswerComment;
 @property (strong, nonatomic) IBOutlet SwipeView *swipeView;
-@property (strong, nonatomic) IBOutlet UIImageView *postImage;
-@property (strong, nonatomic) IBOutlet UILabel *postContent;
 
 //Attributes for data
 @property (strong, nonatomic) User *currentUser; //Most of the data will come from User's attributes.
