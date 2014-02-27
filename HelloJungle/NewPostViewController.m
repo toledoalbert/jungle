@@ -40,9 +40,4 @@
 
 - (IBAction)selectPicture:(UIButton *)sender {
 }
-
-- (IBAction)selectPicture:(id)sender {
-}
-- (IBAction)takePicture:(UIButton *)sender {
-}
 @end
