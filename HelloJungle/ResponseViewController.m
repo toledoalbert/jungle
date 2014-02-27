@@ -64,21 +64,22 @@
 //method that animates the view controller
 - (IBAction)animateViewController:(id)sender
 {
-    SubResponseViewController *controller = (SubResponseViewController *)self.childViewControllers.firstObject;
-    
-    controller.view.backgroundColor = [UIColor blueColor];
-    
+    self.subResponseViewController.view.backgroundColor = [UIColor blueColor];
+
 }
 
 
+/*Method - PrepareForSegue
+Performing a segue to pass a reference of the subResponse View controller to
+an attribute within the Response View Controlller 
+ */
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"commentSegueTransition"])
+    if ([segue.identifier isEqualToString:@"containerSegue"])
     {
-        
-        
-        
+        self.subResponseViewController = segue.destinationViewController;
         
     }
+
 }
 @end

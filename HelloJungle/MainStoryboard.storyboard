@@ -105,7 +105,6 @@
                     <connections>
                         <outlet property="commentSubViewController" destination="c2f-SD-d9a" id="Biw-in-pp9"/>
                         <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
-                        <segue destination="KXV-QJ-aO0" kind="modal" identifier="commentSegueTransition" animates="NO" id="DyK-LM-jSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +164,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FtJ-PZ-ztl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IXB-P9-uDA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="291" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-6d-riR">
@@ -209,7 +208,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="DyK-LM-jSw"/>
-    </inferredMetricsTieBreakers>
 </document>
