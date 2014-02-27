@@ -207,9 +207,9 @@
 				C455035318BCB58C00E394A3 /* HomeViewController.h */,
 				C455035418BCB58C00E394A3 /* HomeViewController.m */,
 				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
+				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
 				819FBDD618BF8983009DA43D /* SubResponseViewController.h */,
 				819FBDD718BF8983009DA43D /* SubResponseViewController.m */,
-				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

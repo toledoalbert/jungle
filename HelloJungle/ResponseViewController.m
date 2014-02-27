@@ -34,6 +34,9 @@
     //Hiding the Navigation control bar.
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    //Displaying the contents in the Comment's subViewController
+    _commentSubViewController.backgroundColor = [UIColor grayColor];
+    
     //Styling Homescreen button
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
     [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
