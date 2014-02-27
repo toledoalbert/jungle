@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186779E18BE73E200D0CBB7 /* ResponseViewController.m */; };
+		819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819FBDD718BF8983009DA43D /* SubResponseViewController.m */; };
 		C1C3FC66529C451AAA5C9ABF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F0F9A6DD634BD6B16C5462 /* libPods.a */; };
 		C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42B16F918BEB3930063FEB0 /* PostView.xib */; };
 		C455032318BCB48D00E394A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455032218BCB48D00E394A3 /* Foundation.framework */; };
@@ -53,6 +54,8 @@
 		2C085A4F6F0140EDB34DBB0F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8186779D18BE73E200D0CBB7 /* ResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseViewController.h; sourceTree = "<group>"; };
 		8186779E18BE73E200D0CBB7 /* ResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseViewController.m; sourceTree = "<group>"; };
+		819FBDD618BF8983009DA43D /* SubResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubResponseViewController.h; sourceTree = "<group>"; };
+		819FBDD718BF8983009DA43D /* SubResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubResponseViewController.m; sourceTree = "<group>"; };
 		94F0F9A6DD634BD6B16C5462 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42B16F918BEB3930063FEB0 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		C455031F18BCB48D00E394A3 /* HelloJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +207,8 @@
 				C455035318BCB58C00E394A3 /* HomeViewController.h */,
 				C455035418BCB58C00E394A3 /* HomeViewController.m */,
 				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
+				819FBDD618BF8983009DA43D /* SubResponseViewController.h */,
+				819FBDD718BF8983009DA43D /* SubResponseViewController.m */,
 				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
 			);
 			name = ViewControllers;
@@ -415,6 +420,7 @@
 				C455032F18BCB48D00E394A3 /* main.m in Sources */,
 				C4BA30D118BD6531003FB8FE /* Response.m in Sources */,
 				C4BA30CE18BD6486003FB8FE /* Question.m in Sources */,
+				819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */,
 				C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */,
 				C4BA30D418BD65E0003FB8FE /* Answer.m in Sources */,
 				C4BA30CB18BD63FD003FB8FE /* Statement.m in Sources */,
