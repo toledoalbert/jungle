@@ -71,8 +71,6 @@
     _swipeView.alignment = SwipeViewAlignmentCenter;
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 1;
-    _swipeView.truncateFinalPage = YES;
-    
     
     //Removing the Background "back" button
     self.navigationItem.leftBarButtonItem=nil;
@@ -85,10 +83,7 @@
 
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {
-    //Here we need to return the number of posts
-    //that the user has in his/her feed.
-    //This number will be returned from the User objects, feed property's
-    //posts array
+    //Return the number of posts from the posts array's size of the feed.
     return _usersFeed.posts.count; //Number of the posts in the feed retrieved from the attribute.
 }
 
@@ -97,20 +92,12 @@
     
     //Get the data from model
     Post *currentPost = ((Post *)_usersFeed.posts[index]);
-    NSString *contentFromPost = currentPost.content;
-    UIImage *imageFromPost = currentPost.image;
-    
-    
-    if (!view)
-    {
-        //Assign the data from model to the ui elements.
-    	//view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
-        view = [[NSBundle mainBundle] loadNibNamed:@"PostView" owner:self options:nil][0];
-        
-        _labelQuestion.text = contentFromPost;
-        _postImage.image = currentPost.image;
 
-    }
+    //Assign the data from model to the ui elements.
+    view = [[NSBundle mainBundle] loadNibNamed:@"PostView" owner:self options:nil][0];
+        
+    _labelQuestion.text = currentPost.content;
+    _postImage.image = currentPost.image;
     
     return view;
 }
