@@ -221,8 +221,8 @@
 		C4BA30BD18BD5EBE003FB8FE /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
 				C42B16F918BEB3930063FEB0 /* PostView.xib */,
+				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
