@@ -96,6 +96,7 @@
         //Assign the data from model to the ui elements.
     	//view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
         view = [[NSBundle mainBundle] loadNibNamed:@"PostView" owner:self options:nil][0];
+
     }
     
     return view;
