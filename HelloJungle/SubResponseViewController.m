@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
     
     //Changing the background color within the view controller
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor grayColor];
      
 }
 
