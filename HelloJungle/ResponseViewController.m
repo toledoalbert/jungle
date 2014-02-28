@@ -57,7 +57,7 @@
 - (IBAction)returnToHomeView:(id)sender
 {
     //Poping a view controller from the navigation controller - (Returning to the homescreen)
-    [self.navigationController popViewControllerAnimated:YES];
+    [self performSegueWithIdentifier: @"segueToHomeView" sender: self];
     
     
 }

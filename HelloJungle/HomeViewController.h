@@ -26,5 +26,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelQuestion;
 @property (strong, nonatomic) IBOutlet UIImageView *postImage;
 
+//Attributes actions
+- (IBAction)segueToResponseView:(id)sender;
+- (IBAction)segueToNewPostView:(id)sender;
+
+
 
 @end

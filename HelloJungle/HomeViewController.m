@@ -114,4 +114,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)segueToResponseView:(id)sender
+{
+    [self performSegueWithIdentifier: @"segueToResponseView" sender: self];
+}
+
+- (IBAction)segueToNewPostView:(id)sender
+{
+    [self performSegueWithIdentifier: @"segueToNewPostView" sender: self];
+}
 @end
