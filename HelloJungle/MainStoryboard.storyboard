@@ -24,7 +24,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2aV-Ey-W4S" kind="push" id="Z9o-Rq-sCE"/>
+                                    <action selector="segueToNewPostView:" destination="znd-QO-WKi" eventType="touchUpInside" id="k7Q-Y2-bMX"/>
+                                    <segue destination="2aV-Ey-W4S" kind="modal" identifier="segueToNewPostView" id="p1c-Ex-UYM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-Em-sya" customClass="FUIButton">
@@ -159,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBv-4t-QX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="-535"/>
+            <point key="canvasLocation" x="378" y="-964"/>
         </scene>
         <!--Sub Response View Controller-->
         <scene sceneID="Bvg-wC-v8J">
