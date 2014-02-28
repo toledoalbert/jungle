@@ -23,6 +23,9 @@
                                 <state key="normal" title="New Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2aV-Ey-W4S" kind="push" id="Z9o-Rq-sCE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-Em-sya" customClass="FUIButton">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -147,12 +150,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q81-GY-tXy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBv-4t-QX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="-75"/>
+            <point key="canvasLocation" x="432" y="-535"/>
         </scene>
-        <!--View Controller-->
+        <!--Sub Response View Controller-->
         <scene sceneID="Bvg-wC-v8J">
             <objects>
                 <viewController id="KXV-QJ-aO0" customClass="SubResponseViewController" sceneMemberID="viewController">
