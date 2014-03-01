@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186779E18BE73E200D0CBB7 /* ResponseViewController.m */; };
 		819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819FBDD718BF8983009DA43D /* SubResponseViewController.m */; };
+		81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */; };
 		C1C3FC66529C451AAA5C9ABF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F0F9A6DD634BD6B16C5462 /* libPods.a */; };
 		C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42B16F918BEB3930063FEB0 /* PostView.xib */; };
 		C42B16FD18BF930C0063FEB0 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B16FC18BF930C0063FEB0 /* NewPostViewController.m */; };
@@ -57,6 +58,8 @@
 		8186779E18BE73E200D0CBB7 /* ResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseViewController.m; sourceTree = "<group>"; };
 		819FBDD618BF8983009DA43D /* SubResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubResponseViewController.h; sourceTree = "<group>"; };
 		819FBDD718BF8983009DA43D /* SubResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubResponseViewController.m; sourceTree = "<group>"; };
+		81EB3B5B18C13CB000B443E4 /* BounceyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceyTransition.h; sourceTree = "<group>"; };
+		81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceyTransition.m; sourceTree = "<group>"; };
 		94F0F9A6DD634BD6B16C5462 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42B16F918BEB3930063FEB0 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		C42B16FB18BF930C0063FEB0 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
@@ -128,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81EB3B5A18C1397900B443E4 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				81EB3B5B18C13CB000B443E4 /* BounceyTransition.h */,
+				81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		C455031618BCB48D00E394A3 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 		C455032818BCB48D00E394A3 /* HelloJungle */ = {
 			isa = PBXGroup;
 			children = (
+				81EB3B5A18C1397900B443E4 /* Transitions */,
 				C4BA30C218BD5FAA003FB8FE /* Models */,
 				C4BA30BF18BD5EE7003FB8FE /* Psuedo */,
 				C4BA30BE18BD5ED9003FB8FE /* Images */,
@@ -209,11 +222,10 @@
 			children = (
 				C455035318BCB58C00E394A3 /* HomeViewController.h */,
 				C455035418BCB58C00E394A3 /* HomeViewController.m */,
-				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
-				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
-				819FBDD618BF8983009DA43D /* SubResponseViewController.h */,
 				819FBDD718BF8983009DA43D /* SubResponseViewController.m */,
+				819FBDD618BF8983009DA43D /* SubResponseViewController.h */,
 				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
+				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
 				C42B16FB18BF930C0063FEB0 /* NewPostViewController.h */,
 				C42B16FC18BF930C0063FEB0 /* NewPostViewController.m */,
 			);
@@ -429,6 +441,7 @@
 				C4BA30CE18BD6486003FB8FE /* Question.m in Sources */,
 				819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */,
 				C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */,
+				81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */,
 				C4BA30D418BD65E0003FB8FE /* Answer.m in Sources */,
 				C4BA30CB18BD63FD003FB8FE /* Statement.m in Sources */,
 			);
