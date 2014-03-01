@@ -8,6 +8,7 @@
 
 #import "ResponseViewController.h"
 #import "SubResponseViewController.h"
+#import "BounceyTransition.h"
 
 @interface ResponseViewController ()
 
@@ -29,14 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    //Hiding the Background "back" button
-    self.navigationItem.leftBarButtonItem=nil;
-    self.navigationItem.hidesBackButton=YES;
-    
-    //Hiding the Navigation control bar.
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-
+	
     //Styling Homescreen button
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
     [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
@@ -61,12 +55,45 @@
     
     
 }
-//method that animates the view controller
-- (IBAction)animateViewController:(id)sender
+//Method that animates the view controller
+- (void)animateViewController:(id)sender
 {
-    self.subResponseViewController.view.backgroundColor = [UIColor blueColor];
-
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    SubResponseViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"subViewController"];
+    
+ //   SubResponseViewController *controller = [[SubResponseViewController alloc] initWithNibName:@"subViewController" bundle:nil];
+    
+    controller.view.backgroundColor = [UIColor blueColor];
+    
+    //Setting the modal Presentation style to Custom
+    controller.modalPresentationStyle = UIModalPresentationCustom;
+    
+    //Adopting the UITransitioning Delegate protocols
+    controller.transitioningDelegate = self;
+    
+    _commentSubViewController.hidden = YES;
+    //Presenting the subresponse view controller into the current view controller "response"
+    //The presentation will be animated and the completion condition will be set to "nil"
+    [self presentViewController:controller
+                       animated:YES
+                     completion:nil];
+    
+    
+    
 }
+
+-(id<UIViewControllerAnimatedTransitioning>)
+animationControllerForPresentedController:(UIViewController *)presented
+presentingController:(UIViewController *)
+presenting sourceController:(UIViewController *)source
+{
+    //Creating a new bouncey transition object
+    BounceyTransition *transition = [[BounceyTransition alloc] init];
+    
+    return transition;
+}
+
 
 
 /*Method - PrepareForSegue

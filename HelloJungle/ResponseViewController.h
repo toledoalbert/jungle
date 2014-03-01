@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
+#import "SubResponseViewController.h"
 
 
 @interface ResponseViewController : UIViewController<UIViewControllerTransitioningDelegate>
@@ -26,6 +27,12 @@
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;
-- (IBAction)animateViewController:(id)sender;
+- (void)animateViewController:(id)sender;
+
+//Method - Animations
+-(id<UIViewControllerAnimatedTransitioning>)
+animationControllerForPresentedController:(UIViewController *)presented
+                     presentingController:(UIViewController *)
+              presenting sourceController:(UIViewController *)source;
 
 @end
