@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewPostViewController : UIViewController
+@interface NewPostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 
 //Properties
 @property (strong, nonatomic) IBOutlet UIImageView *pickedImage;
