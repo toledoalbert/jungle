@@ -27,10 +27,15 @@
 {
     [super viewDidLoad];
     
+    //This was a test object. Tested successfully with Parse.
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
     ////////SAMPLE DATA/////////
     Post *post1 = [[Post alloc] init];
     post1.user =  [[User alloc] init];
-    post1.image = [[UIImage alloc] initWithContentsOfFile:@"/Users/BMaC/Documents/jungle/HelloJungle/image1.jpg"];
+    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image1.jpg"];
     post1.content = @"Where is Post1?";
     
     Post *post2 = [[Post alloc] init];

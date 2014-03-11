@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    //Set up Parse identification for the app
+    [Parse setApplicationId:@"gJRqUxgkXXqfGLRJ2zFiBO8gMNxW8jEqNt9JjhKN"
+                  clientKey:@"uS7rbhVJPLx2rsPBeAdEXk22N0szuQ0rpBEWVK54"];
+    
+    //Add the analytics option for Parse
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     return YES;
 }
 
