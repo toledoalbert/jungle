@@ -16,23 +16,16 @@
 //Attributes - Buttons
 @property (weak, nonatomic) IBOutlet FUIButton *returnToHomeScreen;
 
-//Attributes - Segues
-
+//Attributes - Animator
+@property (strong, nonatomic) UIDynamicAnimator *animator;
 
 //Attributes - Container view
-@property (weak, nonatomic) IBOutlet UIView *commentSubViewController;
+@property (strong, nonatomic) IBOutlet UIView *containerForComments;
 
-//Attributes - View Controllers
-@property (strong, nonatomic) UIViewController *subResponseViewController;
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;
-- (void)animateViewController:(id)sender;
-
-//Method - Animations
--(id<UIViewControllerAnimatedTransitioning>)
-animationControllerForPresentedController:(UIViewController *)presented
-                     presentingController:(UIViewController *)
-              presenting sourceController:(UIViewController *)source;
+- (IBAction)tapContainerForComments:(id)sender;
+- (IBAction)pushContainer:(id)sender;
 
 @end

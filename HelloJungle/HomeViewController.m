@@ -35,7 +35,7 @@
     ////////SAMPLE DATA/////////
     Post *post1 = [[Post alloc] init];
     post1.user =  [[User alloc] init];
-    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image1.jpg"];
+    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image12.jpg"];
     post1.content = @"Where is Post1?";
     
     Post *post2 = [[Post alloc] init];

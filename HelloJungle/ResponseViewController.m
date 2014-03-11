@@ -16,6 +16,8 @@
 
 @implementation ResponseViewController;
 
+@synthesize containerForComments;
+@synthesize animator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +40,8 @@
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
     [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     
-    
+    //Initialize the animator
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 
 }
 
@@ -55,45 +58,35 @@
     
     
 }
-//Method that animates the view controller
-- (void)animateViewController:(id)sender
-{
+
+- (IBAction)tapContainerForComments:(id)sender {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    SubResponseViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"subViewController"];
+    NSLog(@"Tap occured");
     
- //   SubResponseViewController *controller = [[SubResponseViewController alloc] initWithNibName:@"subViewController" bundle:nil];
+    self.view.backgroundColor = [UIColor blueColor];
     
-    controller.view.backgroundColor = [UIColor blueColor];
+    // Create a push behavior with two UIViews and a continuous 'push' mode
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[containerForComments] mode:UIPushBehaviorModeInstantaneous];
     
-    //Setting the modal Presentation style to Custom
-    controller.modalPresentationStyle = UIModalPresentationCustom;
+    [animator addBehavior:push];
     
-    //Adopting the UITransitioning Delegate protocols
-    controller.transitioningDelegate = self;
-    
-    _commentSubViewController.hidden = YES;
-    //Presenting the subresponse view controller into the current view controller "response"
-    //The presentation will be animated and the completion condition will be set to "nil"
-    [self presentViewController:controller
-                       animated:YES
-                     completion:nil];
-    
+    // Set an angle and magnitude
+    [push setAngle:1.6 magnitude:0.5];
     
     
 }
 
--(id<UIViewControllerAnimatedTransitioning>)
-animationControllerForPresentedController:(UIViewController *)presented
-presentingController:(UIViewController *)
-presenting sourceController:(UIViewController *)source
-{
-    //Creating a new bouncey transition object
-    BounceyTransition *transition = [[BounceyTransition alloc] init];
+- (IBAction)pushContainer:(id)sender {
     
-    return transition;
+    // Create a push behavior with two UIViews and a continuous 'push' mode
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[containerForComments] mode:UIPushBehaviorModeInstantaneous];
+    
+    [animator addBehavior:push];
+    
+    // Set an angle and magnitude
+    [push setAngle:1.6 magnitude:0.5];
+    
 }
-
 
 
 /*Method - PrepareForSegue
@@ -104,9 +97,12 @@ an attribute within the Response View Controlller
 {
     if ([segue.identifier isEqualToString:@"containerSegue"])
     {
-        self.subResponseViewController = segue.destinationViewController;
+        
         
     }
 
 }
+
+
+
 @end
