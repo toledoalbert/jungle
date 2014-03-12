@@ -24,6 +24,7 @@
 @synthesize push;
 @synthesize attachement;
 @synthesize gravity;
+@synthesize snapComments;
 @synthesize dynamicBehavior;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,6 +62,11 @@
     [collision addBoundaryWithIdentifier:@"Ground"
                                fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                  toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+    
+    //Create the snap for comments
+    snapComments = [[UISnapBehavior alloc] initWithItem:viewComments snapToPoint:CGPointMake(160.0, 292.5)];
+    snapComments.damping = 2.0;
+    
 	
     
 }
@@ -115,7 +121,11 @@
             sender.view.center = CGPointMake(sender.view.center.x,
                                              sender.view.center.y + translation.y);
             
+        
             [sender setTranslation:CGPointMake(0, 0) inView:sender.view];
+            
+            NSLog(@"y:%f x:%f", sender.view.center.y, sender.view.center.x);
+            
             
             //CGFloat xVelocity = [sender velocityInView:sender.view].x;
             //CGFloat yVelocity = [sender velocityInView:sender.view].y;
@@ -130,6 +140,8 @@
         }
         case UIGestureRecognizerStateEnded:{
             
+            
+            if(sender.view.center.y > 567.5){
             [collision addBoundaryWithIdentifier:@"Ground"
                                        fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                          toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
@@ -137,6 +149,14 @@
             
             [animator addBehavior:collision];
             [animator addBehavior:gravity];
+            
+            }
+            else{
+                
+                [animator addBehavior:snapComments];
+                
+            }
+            
             break;
             
         }

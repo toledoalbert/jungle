@@ -29,6 +29,7 @@
 @property (strong, nonatomic) UICollisionBehavior *collision;
 @property (strong, nonatomic) UIPushBehavior *push;
 @property (strong, nonatomic) UIDynamicItemBehavior *dynamicBehavior;
+@property (strong, nonatomic) UISnapBehavior *snapComments;
 
 
 //Attributes - Actions
