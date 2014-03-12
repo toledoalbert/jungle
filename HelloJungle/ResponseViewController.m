@@ -9,6 +9,7 @@
 #import "ResponseViewController.h"
 #import "SubResponseViewController.h"
 #import "BounceyTransition.h"
+#import "Math.h"
 
 @interface ResponseViewController ()
 
@@ -18,6 +19,12 @@
 
 @synthesize containerForComments;
 @synthesize animator;
+@synthesize viewComments;
+@synthesize collision;
+@synthesize push;
+@synthesize attachement;
+@synthesize gravity;
+@synthesize dynamicBehavior;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
     //Styling Homescreen button
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
     [_returnToHomeScreen setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
@@ -42,8 +49,22 @@
     
     //Initialize the animator
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-
+    
+    //Create the gravity behavior
+    gravity = [[UIGravityBehavior alloc] initWithItems:@[viewComments]];
+    
+    [gravity setGravityDirection:CGVectorMake(0.0, 0.5)];
+    
+    //Create the collision behavior
+    collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
+    
+    [collision addBoundaryWithIdentifier:@"Ground"
+                               fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                                 toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+	
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,34 +80,71 @@
     
 }
 
-- (IBAction)tapContainerForComments:(id)sender {
+
+- (IBAction)tapComments:(id)sender {
     
-    NSLog(@"Tap occured");
+    //Create the push behavior
+    push = [[UIPushBehavior alloc] initWithItems:@[viewComments] mode:UIPushBehaviorModeInstantaneous];
     
-    self.view.backgroundColor = [UIColor blueColor];
+    [push setAngle:1.5*M_PI magnitude:15.0];
     
-    // Create a push behavior with two UIViews and a continuous 'push' mode
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[containerForComments] mode:UIPushBehaviorModeInstantaneous];
+    //Create a push behavior with two UIViews and a continuous 'push' mode
     
     [animator addBehavior:push];
     
-    // Set an angle and magnitude
-    [push setAngle:1.6 magnitude:0.5];
-    
+    [animator addBehavior:gravity];
+
+    [animator addBehavior:collision];
     
 }
 
-- (IBAction)pushContainer:(id)sender {
+- (IBAction)panComments:(UIPanGestureRecognizer *)sender {
     
-    // Create a push behavior with two UIViews and a continuous 'push' mode
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[containerForComments] mode:UIPushBehaviorModeInstantaneous];
     
-    [animator addBehavior:push];
-    
-    // Set an angle and magnitude
-    [push setAngle:1.6 magnitude:0.5];
+    switch (sender.state){
+            
+        case UIGestureRecognizerStateBegan:{
+
+            [animator removeAllBehaviors];
+            break;
+            
+        }
+        case UIGestureRecognizerStateChanged:{
+            
+            CGPoint translation = [sender translationInView:sender.view];
+            sender.view.center = CGPointMake(sender.view.center.x,
+                                             sender.view.center.y + translation.y);
+            
+            [sender setTranslation:CGPointMake(0, 0) inView:sender.view];
+            
+            //CGFloat xVelocity = [sender velocityInView:sender.view].x;
+            //CGFloat yVelocity = [sender velocityInView:sender.view].y;
+            
+            //[dynamicBehavior addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            
+            //[animator addBehavior:dynamicBehavior];
+            
+            
+            break;
+        
+        }
+        case UIGestureRecognizerStateEnded:{
+            
+            [collision addBoundaryWithIdentifier:@"Ground"
+                                       fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                                         toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+
+            
+            [animator addBehavior:collision];
+            [animator addBehavior:gravity];
+            break;
+            
+        }
+            
+    }
     
 }
+
 
 
 /*Method - PrepareForSegue

@@ -21,11 +21,19 @@
 
 //Attributes - Container view
 @property (strong, nonatomic) IBOutlet UIView *containerForComments;
+@property (strong, nonatomic) IBOutlet UIView *viewComments;
+
+//Attributes - Behaviors
+@property (strong, nonatomic) UIGravityBehavior *gravity;
+@property (strong, nonatomic) UIAttachmentBehavior *attachement;
+@property (strong, nonatomic) UICollisionBehavior *collision;
+@property (strong, nonatomic) UIPushBehavior *push;
+@property (strong, nonatomic) UIDynamicItemBehavior *dynamicBehavior;
 
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;
-- (IBAction)tapContainerForComments:(id)sender;
-- (IBAction)pushContainer:(id)sender;
+- (IBAction)tapComments:(id)sender;
+- (IBAction)panComments:(UIPanGestureRecognizer *)sender;
 
 @end

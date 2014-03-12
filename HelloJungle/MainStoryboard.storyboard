@@ -85,43 +85,47 @@
                                     <action selector="returnToHomeView:" destination="0qm-3D-e9c" eventType="touchUpInside" id="grs-0T-HI0"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2f-SD-d9a">
-                                <rect key="frame" x="14" y="492" width="291" height="460"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-WC-YC6">
+                                <rect key="frame" x="26" y="498" width="268" height="471"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWk-hM-SxT">
+                                        <rect key="frame" x="92" y="12" width="85" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <segue destination="KXV-QJ-aO0" kind="embed" identifier="containerSegue" id="E1l-MU-RfS"/>
+                                    <outletCollection property="gestureRecognizers" destination="74a-DI-nTY" appends="YES" id="103-Us-gBT"/>
+                                    <outletCollection property="gestureRecognizers" destination="6D8-HE-LJR" appends="YES" id="v3k-LL-SKJ"/>
                                 </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fc-RX-MUj">
-                                <rect key="frame" x="137" y="106" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Animate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushContainer:" destination="0qm-3D-e9c" eventType="touchUpInside" id="i38-N4-FvC"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" id="yeB-4K-Wkn"/>
                     <connections>
-                        <outlet property="containerForComments" destination="c2f-SD-d9a" id="lNb-Jm-U0D"/>
                         <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
+                        <outlet property="viewComments" destination="hxj-WC-YC6" id="ECW-gY-Gmw"/>
                         <segue destination="znd-QO-WKi" kind="modal" identifier="segueToHomeView" modalTransitionStyle="flipHorizontal" id="YE1-xv-XYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="X1p-rZ-U88">
+                <tapGestureRecognizer id="74a-DI-nTY">
                     <connections>
-                        <action selector="tapContainerForComments:" destination="0qm-3D-e9c" id="ppN-qZ-4dM"/>
+                        <action selector="tapComments:" destination="0qm-3D-e9c" id="0dC-hB-QVn"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6D8-HE-LJR">
+                    <connections>
+                        <action selector="panComments:" destination="0qm-3D-e9c" id="tga-4L-mo0"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="372" y="505"/>
+            <point key="canvasLocation" x="322" y="505"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="EoA-Lj-TEL">
@@ -177,7 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FtJ-PZ-ztl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IXB-P9-uDA">
-                        <rect key="frame" x="0.0" y="0.0" width="291" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-6d-riR">
