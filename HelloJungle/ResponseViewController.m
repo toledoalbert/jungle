@@ -54,7 +54,7 @@
     //Create the gravity behavior
     gravity = [[UIGravityBehavior alloc] initWithItems:@[viewComments]];
     
-    [gravity setGravityDirection:CGVectorMake(0.0, 0.5)];
+    [gravity setGravityDirection:CGVectorMake(0.0, 1.0)];
     
     //Create the collision behavior
     collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
@@ -65,7 +65,7 @@
     
     //Create the snap for comments
     snapComments = [[UISnapBehavior alloc] initWithItem:viewComments snapToPoint:CGPointMake(160.0, 292.5)];
-    snapComments.damping = 2.0;
+    snapComments.damping = 0.7;
     
 	
     
@@ -152,6 +152,18 @@
             
             }
             else{
+                
+                [collision addBoundaryWithIdentifier:@"Left"
+                                           fromPoint:CGPointMake(26.0f, 200.0f)
+                                             toPoint:CGPointMake(26.0f, 800.0f)];
+                
+                [collision addBoundaryWithIdentifier:@"Right"
+                                           fromPoint:CGPointMake(26.0f+268.0f, 200.0f)
+                                             toPoint:CGPointMake(26.0f+268.0f, 800.0f)];
+                
+                
+                [animator addBehavior:collision];
+
                 
                 [animator addBehavior:snapComments];
                 
