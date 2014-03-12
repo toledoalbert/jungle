@@ -65,7 +65,7 @@
     
     //Create the snap for comments
     snapComments = [[UISnapBehavior alloc] initWithItem:viewComments snapToPoint:CGPointMake(160.0, 292.5)];
-    snapComments.damping = 0.7;
+    snapComments.damping = 1.2;
     
 	
     
@@ -127,12 +127,12 @@
             NSLog(@"y:%f x:%f", sender.view.center.y, sender.view.center.x);
             
             
-            //CGFloat xVelocity = [sender velocityInView:sender.view].x;
-            //CGFloat yVelocity = [sender velocityInView:sender.view].y;
+            CGFloat xVelocity = [sender velocityInView:sender.view].x;
+            CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
-            //[dynamicBehavior addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            [dynamicBehavior addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
-            //[animator addBehavior:dynamicBehavior];
+            [animator addBehavior:dynamicBehavior];
             
             
             break;
@@ -140,8 +140,10 @@
         }
         case UIGestureRecognizerStateEnded:{
             
+            CGPoint velocity = [sender velocityInView:self.view];
             
-            if(sender.view.center.y > 567.5){
+            //if(sender.view.center.y > 567.5){
+            if(velocity.y > 0 || sender.view.center.y > 667.5){
             [collision addBoundaryWithIdentifier:@"Ground"
                                        fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                          toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
