@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
+#import "BounceBehavior.h"
+#import "CustomSnapBehavior.h"
+#import "ForceBounceBehavior.h"
 #import "SubResponseViewController.h"
 
 
@@ -24,12 +27,12 @@
 @property (strong, nonatomic) IBOutlet UIView *viewComments;
 
 //Attributes - Behaviors
-@property (strong, nonatomic) UIGravityBehavior *gravity;
-@property (strong, nonatomic) UIAttachmentBehavior *attachement;
+@property (strong, nonatomic) BounceBehavior *bounce;
+@property (strong, nonatomic) ForceBounceBehavior *forceBounce;
+@property (strong, nonatomic) CustomSnapBehavior *snapComments;
+@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
 @property (strong, nonatomic) UICollisionBehavior *collision;
-@property (strong, nonatomic) UIPushBehavior *push;
-@property (strong, nonatomic) UIDynamicItemBehavior *dynamicBehavior;
-@property (strong, nonatomic) UISnapBehavior *snapComments;
+
 
 
 //Attributes - Actions

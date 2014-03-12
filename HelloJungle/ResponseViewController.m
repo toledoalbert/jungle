@@ -20,12 +20,11 @@
 @synthesize containerForComments;
 @synthesize animator;
 @synthesize viewComments;
-@synthesize collision;
-@synthesize push;
-@synthesize attachement;
-@synthesize gravity;
+@synthesize forceBounce;
+@synthesize bounce;
 @synthesize snapComments;
-@synthesize dynamicBehavior;
+@synthesize dynamicItem;
+@synthesize collision;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,23 +50,26 @@
     //Initialize the animator
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    //Create the gravity behavior
-    gravity = [[UIGravityBehavior alloc] initWithItems:@[viewComments]];
+    bounce = [[BounceBehavior alloc] initWithItems:@[viewComments]];
     
-    [gravity setGravityDirection:CGVectorMake(0.0, 1.0)];
+    //set the gravity for bounce
+    [bounce setGravityWithDirection:0.0 andMagnitude:1.0];
     
-    //Create the collision behavior
+    //set the collision border for bounce
+    [bounce addBorderhWithIdentifer:@"Ground"
+                          fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                            toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+    
+    //Create the custom snap for comments
+    snapComments = [[CustomSnapBehavior alloc] initWithItem:viewComments
+                                             andSnaptoPoint:CGPointMake(160.0, 292.5)];
+    
+    [snapComments setDamping:1.2];
+    
+    //Create collision for snap
     collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
     
-    [collision addBoundaryWithIdentifier:@"Ground"
-                               fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
-                                 toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
     
-    //Create the snap for comments
-    snapComments = [[UISnapBehavior alloc] initWithItem:viewComments snapToPoint:CGPointMake(160.0, 292.5)];
-    snapComments.damping = 1.2;
-    
-	
     
 }
 
@@ -89,18 +91,14 @@
 
 - (IBAction)tapComments:(id)sender {
     
-    //Create the push behavior
-    push = [[UIPushBehavior alloc] initWithItems:@[viewComments] mode:UIPushBehaviorModeInstantaneous];
+    //Create the forceBounce behavior
+    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
     
-    [push setAngle:1.5*M_PI magnitude:15.0];
+    //Add the gravity properties
+    [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
     
     //Create a push behavior with two UIViews and a continuous 'push' mode
-    
-    [animator addBehavior:push];
-    
-    [animator addBehavior:gravity];
-
-    [animator addBehavior:collision];
+    [animator addBehavior:forceBounce];
     
 }
 
@@ -130,9 +128,9 @@
             CGFloat xVelocity = [sender velocityInView:sender.view].x;
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
-            [dynamicBehavior addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
-            [animator addBehavior:dynamicBehavior];
+            [animator addBehavior:dynamicItem];
             
             
             break;
@@ -144,13 +142,12 @@
             
             //if(sender.view.center.y > 567.5){
             if(velocity.y > 0 || sender.view.center.y > 667.5){
-            [collision addBoundaryWithIdentifier:@"Ground"
-                                       fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
-                                         toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+            [bounce addBorderhWithIdentifer:@"Ground"
+                                    fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                                    toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
 
             
-            [animator addBehavior:collision];
-            [animator addBehavior:gravity];
+            [animator addBehavior:bounce];
             
             }
             else{
@@ -165,8 +162,6 @@
                 
                 
                 [animator addBehavior:collision];
-
-                
                 [animator addBehavior:snapComments];
                 
             }

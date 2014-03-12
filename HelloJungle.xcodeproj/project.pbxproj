@@ -27,6 +27,9 @@
 		C455034818BCB48D00E394A3 /* HelloJungleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C455034718BCB48D00E394A3 /* HelloJungleTests.m */; };
 		C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */; };
 		C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C455035418BCB58C00E394A3 /* HomeViewController.m */; };
+		C4ABAA4718D0EE5E00AB3744 /* ForceBounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */; };
+		C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */; };
+		C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */; };
 		C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4BA30C018BD5F28003FB8FE /* Planning.txt */; };
 		C4BA30C518BD5FE9003FB8FE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C418BD5FE9003FB8FE /* User.m */; };
 		C4BA30C818BD604E003FB8FE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C718BD604E003FB8FE /* Post.m */; };
@@ -83,6 +86,12 @@
 		C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C455035318BCB58C00E394A3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C455035418BCB58C00E394A3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C4ABAA4518D0EE5E00AB3744 /* ForceBounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceBounceBehavior.h; sourceTree = "<group>"; };
+		C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceBounceBehavior.m; sourceTree = "<group>"; };
+		C4ABAA4818D0EED800AB3744 /* BounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceBehavior.h; sourceTree = "<group>"; };
+		C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceBehavior.m; sourceTree = "<group>"; };
+		C4ABAA4B18D0EEF500AB3744 /* CustomSnapBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSnapBehavior.h; sourceTree = "<group>"; };
+		C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSnapBehavior.m; sourceTree = "<group>"; };
 		C4BA30C018BD5F28003FB8FE /* Planning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Planning.txt; sourceTree = "<group>"; };
 		C4BA30C318BD5FE9003FB8FE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C4BA30C418BD5FE9003FB8FE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -175,6 +184,7 @@
 		C455032818BCB48D00E394A3 /* HelloJungle */ = {
 			isa = PBXGroup;
 			children = (
+				C4ABAA4418D0EB9300AB3744 /* Behaviors */,
 				C4BA30BE18BD5ED9003FB8FE /* Images */,
 				81EB3B5A18C1397900B443E4 /* Transitions */,
 				C4BA30C218BD5FAA003FB8FE /* Models */,
@@ -230,6 +240,19 @@
 				C42B16FC18BF930C0063FEB0 /* NewPostViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4ABAA4418D0EB9300AB3744 /* Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				C4ABAA4518D0EE5E00AB3744 /* ForceBounceBehavior.h */,
+				C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */,
+				C4ABAA4818D0EED800AB3744 /* BounceBehavior.h */,
+				C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */,
+				C4ABAA4B18D0EEF500AB3744 /* CustomSnapBehavior.h */,
+				C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */,
+			);
+			name = Behaviors;
 			sourceTree = "<group>";
 		};
 		C4BA30BC18BD5EAB003FB8FE /* AppDelegate */ = {
@@ -432,15 +455,18 @@
 				C4BA30C818BD604E003FB8FE /* Post.m in Sources */,
 				C4BA30DA18BD6619003FB8FE /* Feed.m in Sources */,
 				C4BA30C518BD5FE9003FB8FE /* User.m in Sources */,
+				C4ABAA4718D0EE5E00AB3744 /* ForceBounceBehavior.m in Sources */,
 				C455033318BCB48D00E394A3 /* AppDelegate.m in Sources */,
 				C4BA30D718BD660B003FB8FE /* Comment.m in Sources */,
 				8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */,
+				C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */,
 				C455032F18BCB48D00E394A3 /* main.m in Sources */,
 				C42B16FD18BF930C0063FEB0 /* NewPostViewController.m in Sources */,
 				C4BA30D118BD6531003FB8FE /* Response.m in Sources */,
 				C4BA30CE18BD6486003FB8FE /* Question.m in Sources */,
 				819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */,
 				C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */,
+				C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */,
 				81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */,
 				C4BA30D418BD65E0003FB8FE /* Answer.m in Sources */,
 				C4BA30CB18BD63FD003FB8FE /* Statement.m in Sources */,
