@@ -48,22 +48,22 @@
     ////////SAMPLE DATA/////////
     Post *post1 = [[Post alloc] init];
     post1.user =  [[User alloc] init];
-    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image1.jpg"];
+    post1.image = [UIImage imageNamed:@"Pink.jpg"];
     post1.content = @"Where is Post1?";
     
     Post *post2 = [[Post alloc] init];
     post2.user =  [[User alloc] init];
-    post2.image = [[UIImage alloc] initWithContentsOfFile:@"/Users/BMaC/Documents/jungle/HelloJungle/image2.jpg"];
+    post2.image = [UIImage imageNamed:@"Orange.jpg"];
     post2.content = @"Where is Post2?";
     
     Post *post3 = [[Post alloc] init];
     post3.user =  [[User alloc] init];
-    post3.image = [[UIImage alloc] initWithContentsOfFile:@"/Users/BMaC/Documents/jungle/HelloJungle/image3.jpg"];
+    post3.image = [UIImage imageNamed:@"Green.jpg"];
     post3.content = @"Where is Post3?";
     
     Post *post4 = [[Post alloc] init];
     post4.user =  [[User alloc] init];
-    post4.image = [[UIImage alloc] initWithContentsOfFile:@"/Users/BMaC/Documents/jungle/HelloJungle/image4.jpg"];
+    post4.image = [UIImage imageNamed:@"Yellow.jpg"];
     post4.content = @"Where is Post4?";
     
 
@@ -142,7 +142,7 @@
     view = [[NSBundle mainBundle] loadNibNamed:@"PostView" owner:self options:nil][0];
     
     //Set the data for the subview from the model.
-    _labelQuestion.text = currentPost.content;
+    _postText.text = currentPost.content;
     _postImage.image = currentPost.image;
     
     return view;

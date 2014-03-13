@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPostView">
             <connections>
+                <outlet property="backgroundImage" destination="4x7-dv-fbM" id="Dcv-Mq-8A8"/>
                 <outlet property="buttonPost" destination="2M0-tR-BSe" id="soi-jS-PWq"/>
                 <outlet property="textView" destination="55d-wO-9oc" id="O9n-yD-kNN"/>
             </connections>
@@ -15,6 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="268" height="471"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4x7-dv-fbM">
+                    <rect key="frame" x="0.0" y="0.0" width="268" height="247"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Enter your question or statement here!" translatesAutoresizingMaskIntoConstraints="NO" id="55d-wO-9oc">
                     <rect key="frame" x="0.0" y="0.0" width="268" height="247"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -29,6 +34,9 @@
                     <state key="normal" image="Orange.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pickOrange:" destination="-1" eventType="touchUpInside" id="LES-c1-WOC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5W-Dc-T96">
                     <rect key="frame" x="61" y="255" width="40" height="40"/>
@@ -36,6 +44,9 @@
                     <state key="normal" image="Pink.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pickPink:" destination="-1" eventType="touchUpInside" id="s5J-K4-08B"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo7-bS-fzK">
                     <rect key="frame" x="114" y="255" width="40" height="40"/>
@@ -43,6 +54,9 @@
                     <state key="normal" image="Red.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pickRed:" destination="-1" eventType="touchUpInside" id="2Fa-Qy-UKw"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frn-Iu-t3V">
                     <rect key="frame" x="167" y="255" width="40" height="40"/>
@@ -50,6 +64,9 @@
                     <state key="normal" image="Yellow.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pickYellow:" destination="-1" eventType="touchUpInside" id="lkL-8T-bGj"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekr-FD-DO5">
                     <rect key="frame" x="220" y="255" width="40" height="40"/>
@@ -57,6 +74,9 @@
                     <state key="normal" image="Blue.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pickBlue:" destination="-1" eventType="touchUpInside" id="2t6-kz-k5E"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M0-tR-BSe">
                     <rect key="frame" x="0.0" y="398" width="268" height="73"/>
@@ -65,6 +85,9 @@
                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sendPost:" destination="-1" eventType="touchUpInside" id="d3C-9e-01c"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.97254908084869385" green="0.95294123888015747" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>

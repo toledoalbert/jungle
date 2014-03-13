@@ -11,12 +11,14 @@
 @implementation NewPostView
 
 @synthesize textView;
+@synthesize backgroundImage;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
     }
     return self;
 }
@@ -36,6 +38,81 @@
         [textView resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
+}
+
+//Messages to pick colors/////////////////////////////////////
+//Pick orange color.
+- (IBAction)pickOrange:(id)sender{
+    
+    //Remove background from textview.
+    [textView setBackgroundColor:nil];
+    
+    //Add the background image to the background imageview.
+    [backgroundImage setImage:[UIImage imageNamed:@"Orange.jpg"]];
+    
+    //Set the new text color matching the background.
+    [textView setTextColor:[UIColor whiteColor]];
+    
+}
+
+- (IBAction)pickPink:(id)sender {
+    
+    //Remove background from textview.
+    [textView setBackgroundColor:nil];
+    
+    //Add the background image to the background imageview.
+    [backgroundImage setImage:[UIImage imageNamed:@"Pink.jpg"]];
+    
+    //Set the new text color matching the background.
+    [textView setTextColor:[UIColor whiteColor]];
+    
+}
+
+- (IBAction)pickRed:(id)sender {
+    
+    //Remove background from textview.
+    [textView setBackgroundColor:nil];
+    
+    //Add the background image to the background imageview.
+    [backgroundImage setImage:[UIImage imageNamed:@"Red.jpg"]];
+    
+    //Set the new text color matching the background.
+    [textView setTextColor:[UIColor whiteColor]];
+    
+}
+
+- (IBAction)pickYellow:(id)sender {
+    
+    //Remove background from textview.
+    [textView setBackgroundColor:nil];
+    
+    //Add the background image to the background imageview.
+    [backgroundImage setImage:[UIImage imageNamed:@"Yellow.jpg"]];
+    
+    //Set the new text color matching the background.
+    [textView setTextColor:[UIColor whiteColor]];
+    
+}
+
+- (IBAction)pickBlue:(id)sender {
+    
+    //Remove background from textview.
+    [textView setBackgroundColor:nil];
+    
+    //Add the background image to the background imageview.
+    [backgroundImage setImage:[UIImage imageNamed:@"Blue.jpg"]];
+    
+    //Set the new text color matching the background.
+    [textView setTextColor:[UIColor whiteColor]];
+    
+}
+
+- (IBAction)sendPost:(id)sender {
+    
+    //Send the post object to the server.
+    
+    //Swipe the new post view back up.
+    
 }
 
 

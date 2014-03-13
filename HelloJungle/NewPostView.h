@@ -13,10 +13,20 @@
 //UI Elements for the new post view
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *buttonPost;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 
 //Methods
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+
+//Actions
+- (IBAction)pickOrange:(id)sender;
+- (IBAction)pickPink:(id)sender;
+- (IBAction)pickRed:(id)sender;
+- (IBAction)pickYellow:(id)sender;
+- (IBAction)pickBlue:(id)sender;
+- (IBAction)sendPost:(id)sender;
+
 
 @end
