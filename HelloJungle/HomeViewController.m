@@ -16,6 +16,7 @@
 
 @implementation HomeViewController
 
+//Synthesize all the properties for the viewcontroller
 @synthesize theNewPostView;
 @synthesize animator;
 @synthesize forceBounce;
@@ -24,16 +25,17 @@
 @synthesize dynamicItem;
 @synthesize collision;
 
+//Init with nib name method, not used at the moment
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        
     }
     return self;
 }
 
+//View did load, this is where shit happens.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,7 +48,7 @@
     ////////SAMPLE DATA/////////
     Post *post1 = [[Post alloc] init];
     post1.user =  [[User alloc] init];
-    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image12.jpg"];
+    post1.image = [[UIImage alloc] initWithContentsOfFile:@"image1.jpg"];
     post1.content = @"Where is Post1?";
     
     Post *post2 = [[Post alloc] init];
@@ -89,10 +91,10 @@
     _swipeView.itemsPerPage = 1;
     
     
-    
     //Initialize the animator
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
+    //Initialize the bounce behavior
     bounce = [[BounceBehavior alloc] initWithItems:@[theNewPostView]];
     
     //set the gravity for bounce
@@ -103,10 +105,11 @@
                           fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                             toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
     
-    //Create the custom snap for comments
+    //Initialize the custom snap for comments
     snapComments = [[CustomSnapBehavior alloc] initWithItem:theNewPostView
                                              andSnaptoPoint:CGPointMake(160.0, 292.5)];
     
+    //Set the damping for the snap
     [snapComments setDamping:1.2];
     
     //Create collision for snap
@@ -121,12 +124,14 @@
     
 }
 
+//This method returns a number which will determine how many spots the swipe view will have.
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {
     //Return the number of posts from the posts array's size of the feed.
-    return _usersFeed.posts.count; //Number of the posts in the feed retrieved from the attribute.
+    return _usersFeed.posts.count; //This number will be retrieved from Parse in the future.
 }
 
+//This is the method where the view for each spot in the swipe view is set by index number.
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
     
@@ -135,27 +140,30 @@
 
     //Assign the data from model to the ui elements.
     view = [[NSBundle mainBundle] loadNibNamed:@"PostView" owner:self options:nil][0];
-        
+    
+    //Set the data for the subview from the model.
     _labelQuestion.text = currentPost.content;
     _postImage.image = currentPost.image;
     
     return view;
 }
 
+//This is the deallocation method to deallocate the swipe view.
 - (void)dealloc
 {
     _swipeView.delegate = nil;
     _swipeView.dataSource = nil;
 }
 
+//Receive memory warning method, not used at this moment.
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)segueToResponseView:(id)sender
+//Segue not needed anymore but can be used in the future.
+/*- (IBAction)segueToResponseView:(id)sender
 {
     [self performSegueWithIdentifier: @"segueToResponseView" sender: self];
 }
@@ -163,7 +171,9 @@
 - (IBAction)segueToNewPostView:(id)sender
 {
     [self performSegueWithIdentifier: @"segueToNewPostView" sender: self];
-}
+}*/
+
+//Tap gesture for the new post view.
 - (IBAction)tapGesture:(id)sender
 {
     
@@ -175,56 +185,75 @@
     
 }
 
+//Pan gesture for the new post view.
 - (IBAction)panGesture:(UIPanGestureRecognizer*)sender
 {
+    //Get the state of the gesture and check.
     switch (sender.state){
             
+        //When the gesture just began.
         case UIGestureRecognizerStateBegan:{
             
+            //Remove all behaviors.
             [animator removeAllBehaviors];
+            
             break;
             
         }
+        //When the gesture moved.
         case UIGestureRecognizerStateChanged:{
             
+            //Get the point of translation.
             CGPoint translation = [sender translationInView:sender.view];
+            
+            //Update the point for the center of the view.
             sender.view.center = CGPointMake(sender.view.center.x,
                                              sender.view.center.y + translation.y);
             
-            
+            //Update the translation.
             [sender setTranslation:CGPointMake(0, 0) inView:sender.view];
             
+            //Just log out the x,y coordinates for debugging purposes.
             NSLog(@"y:%f x:%f", sender.view.center.y, sender.view.center.x);
             
-            
+            //Get and store the velocity of the y and x axis for the gesture.
             CGFloat xVelocity = [sender velocityInView:sender.view].x;
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
+            //Set the velocity for the item to the velocity of the gesture.
             [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
+            //Add the dynamic behavior to the animator.
             [animator addBehavior:dynamicItem];
-            
             
             break;
             
         }
+        //When the gesture ended.
         case UIGestureRecognizerStateEnded:{
             
+            //Get the velocity of the view.
             CGPoint velocity = [sender velocityInView:self.view];
             
-            //if(sender.view.center.y > 567.5){
+            //If the pan ended while swiping up then apply sky bounce.
             if(velocity.y < 0 ){//|| sender.view.center.y > -280){
+                
+                //Initialize the bounce with sky as the border.
                 [bounce addBorderhWithIdentifer:@"Sky"
                                       fromPoint:CGPointMake(0.0f, -404.0f)
                                         toPoint:CGPointMake(320.0f, -404.0f)];
                 
+                //Add the bounce to the animator.
                 [animator addBehavior:bounce];
                 
             }
+            //If pan ended while swiping down apply the snap.
             else{
                 
+                //First remove all other behaviors.
                 [animator removeAllBehaviors];
                 
+                //Create the left and righ boundaries so snap doesn't shake the view.
                 [collision addBoundaryWithIdentifier:@"Left"
                                            fromPoint:CGPointMake(26.0f, -100.0f)
                                              toPoint:CGPointMake(26.0f, 800.0f)];
@@ -233,7 +262,7 @@
                                            fromPoint:CGPointMake(26.0f+268.0f, -100.0f)
                                              toPoint:CGPointMake(26.0f+268.0f, 800.0f)];
                 
-                
+                //Add all needed behaviors to the animator.
                 [animator addBehavior:collision];
                 [animator addBehavior:snapComments];
                 

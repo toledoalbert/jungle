@@ -191,7 +191,6 @@
 		C455032818BCB48D00E394A3 /* HelloJungle */ = {
 			isa = PBXGroup;
 			children = (
-				C4EB3D4B18D17F2800158607 /* Views */,
 				C4ABAA4418D0EB9300AB3744 /* Behaviors */,
 				C4BA30BE18BD5ED9003FB8FE /* Images */,
 				81EB3B5A18C1397900B443E4 /* Transitions */,
@@ -199,6 +198,7 @@
 				C4BA30BF18BD5EE7003FB8FE /* Psuedo */,
 				C4BA30BD18BD5EBE003FB8FE /* Interface */,
 				C4BA30BC18BD5EAB003FB8FE /* AppDelegate */,
+				C4EB3D4B18D17F2800158607 /* Views */,
 				C455035618BCB59A00E394A3 /* ViewControllers */,
 				C455033418BCB48D00E394A3 /* Images.xcassets */,
 				C455032918BCB48D00E394A3 /* Supporting Files */,
@@ -209,6 +209,7 @@
 		C455032918BCB48D00E394A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C4DAC98818BE8A4900CF9036 /* image1.jpg */,
 				C455032A18BCB48D00E394A3 /* HelloJungle-Info.plist */,
 				C455032B18BCB48D00E394A3 /* InfoPlist.strings */,
 				C455032E18BCB48D00E394A3 /* main.m */,
@@ -284,7 +285,6 @@
 		C4BA30BE18BD5ED9003FB8FE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C4DAC98818BE8A4900CF9036 /* image1.jpg */,
 				C4DAC98918BE8A4900CF9036 /* image2.jpg */,
 				C4DAC98A18BE8A4900CF9036 /* image3.jpeg */,
 				C4DAC98B18BE8A4900CF9036 /* image4.jpg */,
