@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186779E18BE73E200D0CBB7 /* ResponseViewController.m */; };
-		819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819FBDD718BF8983009DA43D /* SubResponseViewController.m */; };
 		81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */; };
 		C1C3FC66529C451AAA5C9ABF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F0F9A6DD634BD6B16C5462 /* libPods.a */; };
 		C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42B16F918BEB3930063FEB0 /* PostView.xib */; };
@@ -30,6 +29,7 @@
 		C4ABAA4718D0EE5E00AB3744 /* ForceBounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */; };
 		C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */; };
 		C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */; };
+		C4ABAA4F18D15EB100AB3744 /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4ABAA4E18D15EB000AB3744 /* CommentsView.xib */; };
 		C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4BA30C018BD5F28003FB8FE /* Planning.txt */; };
 		C4BA30C518BD5FE9003FB8FE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C418BD5FE9003FB8FE /* User.m */; };
 		C4BA30C818BD604E003FB8FE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BA30C718BD604E003FB8FE /* Post.m */; };
@@ -43,6 +43,7 @@
 		C4DAC98D18BE8A4900CF9036 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC98918BE8A4900CF9036 /* image2.jpg */; };
 		C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC98A18BE8A4900CF9036 /* image3.jpeg */; };
 		C4DAC98F18BE8A4900CF9036 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC98B18BE8A4900CF9036 /* image4.jpg */; };
+		C4EB3D4A18D167D400158607 /* CommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EB3D4918D167D400158607 /* CommentsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,6 @@
 		2C085A4F6F0140EDB34DBB0F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8186779D18BE73E200D0CBB7 /* ResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseViewController.h; sourceTree = "<group>"; };
 		8186779E18BE73E200D0CBB7 /* ResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseViewController.m; sourceTree = "<group>"; };
-		819FBDD618BF8983009DA43D /* SubResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubResponseViewController.h; sourceTree = "<group>"; };
-		819FBDD718BF8983009DA43D /* SubResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubResponseViewController.m; sourceTree = "<group>"; };
 		81EB3B5B18C13CB000B443E4 /* BounceyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceyTransition.h; sourceTree = "<group>"; };
 		81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceyTransition.m; sourceTree = "<group>"; };
 		94F0F9A6DD634BD6B16C5462 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +91,7 @@
 		C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceBehavior.m; sourceTree = "<group>"; };
 		C4ABAA4B18D0EEF500AB3744 /* CustomSnapBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSnapBehavior.h; sourceTree = "<group>"; };
 		C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSnapBehavior.m; sourceTree = "<group>"; };
+		C4ABAA4E18D15EB000AB3744 /* CommentsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
 		C4BA30C018BD5F28003FB8FE /* Planning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Planning.txt; sourceTree = "<group>"; };
 		C4BA30C318BD5FE9003FB8FE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C4BA30C418BD5FE9003FB8FE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		C4DAC98918BE8A4900CF9036 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		C4DAC98A18BE8A4900CF9036 /* image3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpeg; sourceTree = "<group>"; };
 		C4DAC98B18BE8A4900CF9036 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		C4EB3D4818D167D300158607 /* CommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsView.h; sourceTree = "<group>"; };
+		C4EB3D4918D167D400158607 /* CommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,12 +234,12 @@
 			children = (
 				C455035318BCB58C00E394A3 /* HomeViewController.h */,
 				C455035418BCB58C00E394A3 /* HomeViewController.m */,
-				819FBDD718BF8983009DA43D /* SubResponseViewController.m */,
-				819FBDD618BF8983009DA43D /* SubResponseViewController.h */,
 				8186779E18BE73E200D0CBB7 /* ResponseViewController.m */,
 				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
 				C42B16FB18BF930C0063FEB0 /* NewPostViewController.h */,
 				C42B16FC18BF930C0063FEB0 /* NewPostViewController.m */,
+				C4EB3D4818D167D300158607 /* CommentsView.h */,
+				C4EB3D4918D167D400158607 /* CommentsView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +271,7 @@
 			children = (
 				C42B16F918BEB3930063FEB0 /* PostView.xib */,
 				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
+				C4ABAA4E18D15EB000AB3744 /* CommentsView.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */,
 				C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */,
 				C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */,
+				C4ABAA4F18D15EB100AB3744 /* CommentsView.xib in Resources */,
 				C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */,
 				C4DAC98D18BE8A4900CF9036 /* image2.jpg in Resources */,
 				C455033518BCB48D00E394A3 /* Images.xcassets in Resources */,
@@ -461,10 +465,10 @@
 				8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */,
 				C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */,
 				C455032F18BCB48D00E394A3 /* main.m in Sources */,
+				C4EB3D4A18D167D400158607 /* CommentsView.m in Sources */,
 				C42B16FD18BF930C0063FEB0 /* NewPostViewController.m in Sources */,
 				C4BA30D118BD6531003FB8FE /* Response.m in Sources */,
 				C4BA30CE18BD6486003FB8FE /* Question.m in Sources */,
-				819FBDD818BF8983009DA43D /* SubResponseViewController.m in Sources */,
 				C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */,
 				C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */,
 				81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */,
