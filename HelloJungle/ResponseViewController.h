@@ -11,8 +11,6 @@
 #import "BounceBehavior.h"
 #import "CustomSnapBehavior.h"
 #import "ForceBounceBehavior.h"
-#import "SubResponseViewController.h"
-
 
 @interface ResponseViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
@@ -22,8 +20,7 @@
 //Attributes - Animator
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 
-//Attributes - Container view
-@property (strong, nonatomic) IBOutlet UIView *containerForComments;
+//Attributes - View for comments
 @property (strong, nonatomic) IBOutlet UIView *viewComments;
 
 //Attributes - Behaviors

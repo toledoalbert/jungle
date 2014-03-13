@@ -7,7 +7,6 @@
 //
 
 #import "ResponseViewController.h"
-#import "SubResponseViewController.h"
 #import "BounceyTransition.h"
 #import "Math.h"
 
@@ -17,7 +16,6 @@
 
 @implementation ResponseViewController;
 
-@synthesize containerForComments;
 @synthesize animator;
 @synthesize viewComments;
 @synthesize forceBounce;
@@ -69,7 +67,11 @@
     //Create collision for snap
     collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
     
+    //Create the forceBounce behavior
+    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
     
+    //Add the gravity properties
+    [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
     
 }
 
@@ -92,10 +94,7 @@
 - (IBAction)tapComments:(id)sender {
     
     //Create the forceBounce behavior
-    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
-    
-    //Add the gravity properties
-    [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
+    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments] mode:@"groundMode"];
     
     //Create a push behavior with two UIViews and a continuous 'push' mode
     [animator addBehavior:forceBounce];

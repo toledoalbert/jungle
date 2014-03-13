@@ -19,9 +19,6 @@
 
 
 //Constructor - Initializes the Dynamic Behavior properties
--(instancetype)initWithItems:(NSArray*)items;
-
-//Methods
--(void)setPushWithAngle:(float)angle  andMagnitude:(float)magnitude;
+-(instancetype)initWithItems:(NSArray*)items mode:(NSString*)mode;
 
 @end

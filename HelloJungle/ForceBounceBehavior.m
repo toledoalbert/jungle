@@ -15,7 +15,8 @@
 @synthesize collision;
 
 
--(instancetype)initWithItems:(NSArray*)items
+-(instancetype)initWithItems:(NSArray*)items mode:(NSString*)mode
+
 {
     if(self = [super init])
     {
@@ -24,7 +25,22 @@
         collision = [[UICollisionBehavior alloc] initWithItems:items];
         push = [[UIPushBehavior alloc] initWithItems:items
                                                 mode:UIPushBehaviorModeInstantaneous];
-          
+        
+        //Setting the properties for the force push behavior
+        [push setAngle:1.5*M_PI magnitude:15.0];
+        
+        //Check the mode
+        if([mode isEqualToString:@"groundMode"]){
+            [gravity setGravityDirection:CGVectorMake(0.0, 1.0)];
+        }//more modes can be added in the future
+        
+        [collision addBoundaryWithIdentifier:@"Ground"
+                                   fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                                     toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+        
+        
+        
+        
         //Adding the subBehaviors to the Force Behavior object
         [self addChildBehavior:gravity];
         [self addChildBehavior:push];
@@ -36,13 +52,6 @@
     return self;
 }//end Constructor
 
-//Method - setPushBehavior
--(void)setPushWithAngle:(float)angle  andMagnitude:(float)magnitude
-{
-    //Setting the angle and magnitude for the pushBehavior
-    [push setAngle:angle magnitude:magnitude];
-    
-}//end setPushBehavior Method
 
 
 
