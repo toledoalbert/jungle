@@ -10,14 +10,14 @@
 
 @interface CustomSnapBehavior : UIDynamicBehavior
 
-//variables
+//Attributes - Behaviors
 @property(strong, nonatomic) UISnapBehavior *snap;
 @property(strong, nonatomic) UIDynamicItemBehavior *forceBounceItemBehviors;
 
-//Constructor
+//Attributes - Constructor
 -(instancetype)initWithItem:(id <UIDynamicItem>)item andSnaptoPoint:(CGPoint)point;
 
-//Messages
+//Attributes - Methods
 -(void)setDamping:(float) damping;
 
 @end

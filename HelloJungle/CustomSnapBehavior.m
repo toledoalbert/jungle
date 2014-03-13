@@ -10,6 +10,7 @@
 
 @implementation CustomSnapBehavior
 
+//Attributes - Synthesized Properties
 @synthesize snap;
 
 -(instancetype)initWithItem:(id <UIDynamicItem>)item andSnaptoPoint:(CGPoint)point
@@ -24,13 +25,14 @@
         
     }//end if condition
     
+    //returning an instance of self to the object that called the constructor
     return self;
 }//end Constructor
-
 
 //Method
 -(void)setDamping:(float) damping
 {
+    //Setting the damping attribute for the snap behavior
     snap.damping = damping;
 
 }//end damping method

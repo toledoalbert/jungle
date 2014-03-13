@@ -10,14 +10,16 @@
 
 @interface BounceBehavior : UIDynamicBehavior
 
-//variables
+//Attributes - Behaviors
 @property(strong, nonatomic) UIGravityBehavior *gravity;
 @property(strong, nonatomic) UICollisionBehavior *collision;
 @property(strong, nonatomic) UIDynamicItemBehavior *forceBounceItemBehviors;
 
 
-//Methods
+//Attributes - Constructor
 -(instancetype)initWithItems:(NSArray*)items;
+
+//Attributes - Methods
 -(void)addBorderhWithIdentifer:(NSString*)identifer
                      fromPoint:(CGPoint)inital toPoint:(CGPoint)destination;
 -(void)setGravityWithDirection:(float)direction  andMagnitude:(float)magnitude;

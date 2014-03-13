@@ -11,14 +11,15 @@
 
 @interface ForceBounceBehavior : BounceBehavior
 
-//Variables
+//Attributes - Behaviors
 @property(strong, nonatomic) UIPushBehavior *push;
 @property(strong, nonatomic) UIGravityBehavior *gravity;
 @property(strong, nonatomic) UICollisionBehavior *collision;
 @property(strong, nonatomic) UIDynamicItemBehavior *forceBounceItemBehviors;
 
+//Attributes - Constructor
 
-//Constructor - Initializes the Dynamic Behavior properties
+//Initializes the Dynamic Behavior properties
 -(instancetype)initWithItems:(NSArray*)items mode:(NSString*)mode;
 
 @end

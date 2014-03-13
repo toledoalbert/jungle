@@ -10,7 +10,7 @@
 
 @implementation BounceBehavior
 
-//Synthesizing Behaviors
+//Attributes - Synthesized Properties
 @synthesize gravity;
 @synthesize collision;
 
@@ -28,7 +28,9 @@
         
     }//end if condition
     
+    //returning an instance of self to the object that called the constructor
     return self;
+    
 }//end Constructor
 
 //Method - addCollisionBorder
