@@ -44,6 +44,8 @@
 		C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC98A18BE8A4900CF9036 /* image3.jpeg */; };
 		C4DAC98F18BE8A4900CF9036 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC98B18BE8A4900CF9036 /* image4.jpg */; };
 		C4EB3D4A18D167D400158607 /* CommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EB3D4918D167D400158607 /* CommentsView.m */; };
+		C4EB3D4D18D1804400158607 /* NewPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EB3D4C18D1804400158607 /* NewPostView.xib */; };
+		C4EB3D5018D1813B00158607 /* NewPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EB3D4F18D1813B00158607 /* NewPostView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,9 @@
 		C4DAC98B18BE8A4900CF9036 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
 		C4EB3D4818D167D300158607 /* CommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsView.h; sourceTree = "<group>"; };
 		C4EB3D4918D167D400158607 /* CommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsView.m; sourceTree = "<group>"; };
+		C4EB3D4C18D1804400158607 /* NewPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPostView.xib; sourceTree = "<group>"; };
+		C4EB3D4E18D1813A00158607 /* NewPostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostView.h; sourceTree = "<group>"; };
+		C4EB3D4F18D1813B00158607 /* NewPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +191,7 @@
 		C455032818BCB48D00E394A3 /* HelloJungle */ = {
 			isa = PBXGroup;
 			children = (
+				C4EB3D4B18D17F2800158607 /* Views */,
 				C4ABAA4418D0EB9300AB3744 /* Behaviors */,
 				C4BA30BE18BD5ED9003FB8FE /* Images */,
 				81EB3B5A18C1397900B443E4 /* Transitions */,
@@ -238,8 +244,6 @@
 				8186779D18BE73E200D0CBB7 /* ResponseViewController.h */,
 				C42B16FB18BF930C0063FEB0 /* NewPostViewController.h */,
 				C42B16FC18BF930C0063FEB0 /* NewPostViewController.m */,
-				C4EB3D4818D167D300158607 /* CommentsView.h */,
-				C4EB3D4918D167D400158607 /* CommentsView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +276,7 @@
 				C42B16F918BEB3930063FEB0 /* PostView.xib */,
 				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
 				C4ABAA4E18D15EB000AB3744 /* CommentsView.xib */,
+				C4EB3D4C18D1804400158607 /* NewPostView.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -316,6 +321,17 @@
 				C4BA30D918BD6619003FB8FE /* Feed.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		C4EB3D4B18D17F2800158607 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB3D4818D167D300158607 /* CommentsView.h */,
+				C4EB3D4918D167D400158607 /* CommentsView.m */,
+				C4EB3D4E18D1813A00158607 /* NewPostView.h */,
+				C4EB3D4F18D1813B00158607 /* NewPostView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +413,7 @@
 			files = (
 				C4DAC98F18BE8A4900CF9036 /* image4.jpg in Resources */,
 				C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */,
+				C4EB3D4D18D1804400158607 /* NewPostView.xib in Resources */,
 				C4DAC98C18BE8A4900CF9036 /* image1.jpg in Resources */,
 				C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */,
 				C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */,
@@ -466,6 +483,7 @@
 				C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */,
 				C455032F18BCB48D00E394A3 /* main.m in Sources */,
 				C4EB3D4A18D167D400158607 /* CommentsView.m in Sources */,
+				C4EB3D5018D1813B00158607 /* NewPostView.m in Sources */,
 				C42B16FD18BF930C0063FEB0 /* NewPostViewController.m in Sources */,
 				C4BA30D118BD6531003FB8FE /* Response.m in Sources */,
 				C4BA30CE18BD6486003FB8FE /* Question.m in Sources */,

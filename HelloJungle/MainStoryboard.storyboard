@@ -16,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-9y-UQd" customClass="FUIButton">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
-                                <state key="normal" title="New Post">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="segueToNewPostView:" destination="znd-QO-WKi" eventType="touchUpInside" id="k7Q-Y2-bMX"/>
-                                    <segue destination="2aV-Ey-W4S" kind="modal" identifier="segueToNewPostView" id="p1c-Ex-UYM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-Em-sya" customClass="FUIButton">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,12 +28,22 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-bJ-FCp" customClass="SwipeView">
-                                <rect key="frame" x="0.0" y="52" width="320" height="464"/>
+                                <rect key="frame" x="57" y="75" width="320" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="znd-QO-WKi" id="4R8-rq-CWM"/>
                                     <outlet property="delegate" destination="znd-QO-WKi" id="Tyn-AR-xFm"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VqB-Nu-DAG" customClass="NewPostView">
+                                <rect key="frame" x="26" y="-404" width="268" height="471"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.090196080505847931" green="0.27450981736183167" blue="0.42352944612503052" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ihT-ZS-nlR" appends="YES" id="PMQ-He-CGU"/>
+                                    <outletCollection property="gestureRecognizers" destination="P8q-LJ-dts" appends="YES" id="Z4f-aW-zcT"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -54,12 +52,22 @@
                     <navigationItem key="navigationItem" id="0id-3j-sRa"/>
                     <connections>
                         <outlet property="buttonAnswerComment" destination="TBH-Em-sya" id="8fp-ix-qJd"/>
-                        <outlet property="buttonNewPost" destination="TGn-9y-UQd" id="POq-Qx-RWG"/>
                         <outlet property="swipeView" destination="yFi-bJ-FCp" id="dWn-0P-ova"/>
+                        <outlet property="theNewPostView" destination="VqB-Nu-DAG" id="uU1-ue-f9N"/>
                         <segue destination="0qm-3D-e9c" kind="modal" identifier="segueToResponseView" modalTransitionStyle="flipHorizontal" id="4T9-AQ-7wJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHM-DV-W1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ihT-ZS-nlR">
+                    <connections>
+                        <action selector="tapGesture:" destination="znd-QO-WKi" id="MHs-Rk-qeF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="P8q-LJ-dts">
+                    <connections>
+                        <action selector="panGesture:" destination="znd-QO-WKi" id="LSq-Ne-aoe"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-169" y="-288"/>
         </scene>

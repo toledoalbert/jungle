@@ -23,6 +23,7 @@
 //Attributes - View for comments
 @property (strong, nonatomic) IBOutlet UIView *viewComments;
 
+
 //Attributes - Behaviors
 @property (strong, nonatomic) BounceBehavior *bounce;
 @property (strong, nonatomic) ForceBounceBehavior *forceBounce;
