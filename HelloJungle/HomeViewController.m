@@ -163,12 +163,12 @@
 }
 
 //Segue not needed anymore but can be used in the future.
-/*- (IBAction)segueToResponseView:(id)sender
+- (IBAction)segueToResponseView:(id)sender
 {
     [self performSegueWithIdentifier: @"segueToResponseView" sender: self];
 }
 
-- (IBAction)segueToNewPostView:(id)sender
+/*- (IBAction)segueToNewPostView:(id)sender
 {
     [self performSegueWithIdentifier: @"segueToNewPostView" sender: self];
 }*/

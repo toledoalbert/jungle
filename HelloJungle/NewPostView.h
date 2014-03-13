@@ -10,7 +10,13 @@
 
 @interface NewPostView : UIView
 
+//UI Elements for the new post view
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UIButton *buttonPost;
+
+
 //Methods
 - (id)initWithCoder:(NSCoder *)aDecoder;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end

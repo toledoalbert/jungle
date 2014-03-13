@@ -10,6 +10,8 @@
 
 @implementation NewPostView
 
+@synthesize textView;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -25,6 +27,17 @@
     }
     return self;
 }
+
+//This method dismisses the keyboard when textview looses focus.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([textView isFirstResponder] && [touch view] != textView) {
+        [textView resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

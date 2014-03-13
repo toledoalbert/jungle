@@ -26,6 +26,12 @@
 		C455034818BCB48D00E394A3 /* HelloJungleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C455034718BCB48D00E394A3 /* HelloJungleTests.m */; };
 		C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */; };
 		C455035518BCB58C00E394A3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C455035418BCB58C00E394A3 /* HomeViewController.m */; };
+		C478375518D238C90093AE5F /* Blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478374F18D238C90093AE5F /* Blue.jpg */; };
+		C478375618D238C90093AE5F /* Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375018D238C90093AE5F /* Green.jpg */; };
+		C478375718D238C90093AE5F /* Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375118D238C90093AE5F /* Orange.jpg */; };
+		C478375818D238C90093AE5F /* Pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375218D238C90093AE5F /* Pink.jpg */; };
+		C478375918D238C90093AE5F /* Red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375318D238C90093AE5F /* Red.jpg */; };
+		C478375A18D238C90093AE5F /* Yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375418D238C90093AE5F /* Yellow.jpg */; };
 		C4ABAA4718D0EE5E00AB3744 /* ForceBounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */; };
 		C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */; };
 		C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */; };
@@ -87,6 +93,12 @@
 		C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C455035318BCB58C00E394A3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C455035418BCB58C00E394A3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C478374F18D238C90093AE5F /* Blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Blue.jpg; sourceTree = "<group>"; };
+		C478375018D238C90093AE5F /* Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Green.jpg; sourceTree = "<group>"; };
+		C478375118D238C90093AE5F /* Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orange.jpg; sourceTree = "<group>"; };
+		C478375218D238C90093AE5F /* Pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pink.jpg; sourceTree = "<group>"; };
+		C478375318D238C90093AE5F /* Red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Red.jpg; sourceTree = "<group>"; };
+		C478375418D238C90093AE5F /* Yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yellow.jpg; sourceTree = "<group>"; };
 		C4ABAA4518D0EE5E00AB3744 /* ForceBounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceBounceBehavior.h; sourceTree = "<group>"; };
 		C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceBounceBehavior.m; sourceTree = "<group>"; };
 		C4ABAA4818D0EED800AB3744 /* BounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceBehavior.h; sourceTree = "<group>"; };
@@ -285,6 +297,12 @@
 		C4BA30BE18BD5ED9003FB8FE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C478374F18D238C90093AE5F /* Blue.jpg */,
+				C478375018D238C90093AE5F /* Green.jpg */,
+				C478375118D238C90093AE5F /* Orange.jpg */,
+				C478375218D238C90093AE5F /* Pink.jpg */,
+				C478375318D238C90093AE5F /* Red.jpg */,
+				C478375418D238C90093AE5F /* Yellow.jpg */,
 				C4DAC98918BE8A4900CF9036 /* image2.jpg */,
 				C4DAC98A18BE8A4900CF9036 /* image3.jpeg */,
 				C4DAC98B18BE8A4900CF9036 /* image4.jpg */,
@@ -412,9 +430,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4DAC98F18BE8A4900CF9036 /* image4.jpg in Resources */,
+				C478375918D238C90093AE5F /* Red.jpg in Resources */,
+				C478375A18D238C90093AE5F /* Yellow.jpg in Resources */,
+				C478375718D238C90093AE5F /* Orange.jpg in Resources */,
+				C478375818D238C90093AE5F /* Pink.jpg in Resources */,
 				C455035218BCB4B700E394A3 /* MainStoryboard.storyboard in Resources */,
 				C4EB3D4D18D1804400158607 /* NewPostView.xib in Resources */,
 				C4DAC98C18BE8A4900CF9036 /* image1.jpg in Resources */,
+				C478375618D238C90093AE5F /* Green.jpg in Resources */,
 				C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */,
 				C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */,
 				C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */,
@@ -422,6 +445,7 @@
 				C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */,
 				C4DAC98D18BE8A4900CF9036 /* image2.jpg in Resources */,
 				C455033518BCB48D00E394A3 /* Images.xcassets in Resources */,
+				C478375518D238C90093AE5F /* Blue.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
