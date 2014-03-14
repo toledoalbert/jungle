@@ -267,7 +267,6 @@
                 [animator addBehavior:snapComments];
                 
             }
-            
             break;
             
         }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BounceBehavior.h"
 
 @interface NewPostView : UIView
 
@@ -14,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *buttonPost;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (strong, nonatomic) BounceBehavior *bounce;
+@property (strong, nonatomic) UIDynamicAnimator *animator;
 
 
 //Methods
@@ -27,6 +30,5 @@
 - (IBAction)pickYellow:(id)sender;
 - (IBAction)pickBlue:(id)sender;
 - (IBAction)sendPost:(id)sender;
-
 
 @end

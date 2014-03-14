@@ -43,7 +43,7 @@
 
 //Attributes actions
 - (IBAction)segueToResponseView:(id)sender;
-- (IBAction)segueToNewPostView:(id)sender;
+//- (IBAction)segueToNewPostView:(id)sender;
 
 //Attributes - Animator
 @property (strong, nonatomic) UIDynamicAnimator *animator;
