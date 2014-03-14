@@ -12,13 +12,14 @@
 
 @synthesize textView;
 @synthesize backgroundImage;
+@synthesize buttonPost;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+        buttonPost.enabled = NO;
     }
     return self;
 }
