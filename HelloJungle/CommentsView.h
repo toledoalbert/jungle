@@ -12,4 +12,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
+//Attributes - Views
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @end
