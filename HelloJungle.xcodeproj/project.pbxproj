@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8186779F18BE73E200D0CBB7 /* ResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186779E18BE73E200D0CBB7 /* ResponseViewController.m */; };
+		81A20B0B18D3AA64000D5FA7 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A20B0A18D3AA64000D5FA7 /* CustomTableViewCell.m */; };
+		81A20B0D18D3AA96000D5FA7 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A20B0C18D3AA96000D5FA7 /* CustomTableViewCell.xib */; };
 		81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */; };
 		C1C3FC66529C451AAA5C9ABF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F0F9A6DD634BD6B16C5462 /* libPods.a */; };
 		C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42B16F918BEB3930063FEB0 /* PostView.xib */; };
@@ -68,6 +70,9 @@
 		2C085A4F6F0140EDB34DBB0F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8186779D18BE73E200D0CBB7 /* ResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseViewController.h; sourceTree = "<group>"; };
 		8186779E18BE73E200D0CBB7 /* ResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseViewController.m; sourceTree = "<group>"; };
+		81A20B0918D3AA64000D5FA7 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		81A20B0A18D3AA64000D5FA7 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		81A20B0C18D3AA96000D5FA7 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		81EB3B5B18C13CB000B443E4 /* BounceyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceyTransition.h; sourceTree = "<group>"; };
 		81EB3B5C18C13CB000B443E4 /* BounceyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceyTransition.m; sourceTree = "<group>"; };
 		94F0F9A6DD634BD6B16C5462 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +295,7 @@
 				C455035118BCB4B700E394A3 /* MainStoryboard.storyboard */,
 				C4ABAA4E18D15EB000AB3744 /* CommentsView.xib */,
 				C4EB3D4C18D1804400158607 /* NewPostView.xib */,
+				81A20B0C18D3AA96000D5FA7 /* CustomTableViewCell.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -348,6 +354,8 @@
 				C4EB3D4918D167D400158607 /* CommentsView.m */,
 				C4EB3D4E18D1813A00158607 /* NewPostView.h */,
 				C4EB3D4F18D1813B00158607 /* NewPostView.m */,
+				81A20B0918D3AA64000D5FA7 /* CustomTableViewCell.h */,
+				81A20B0A18D3AA64000D5FA7 /* CustomTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -443,6 +451,7 @@
 				C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */,
 				C4ABAA4F18D15EB100AB3744 /* CommentsView.xib in Resources */,
 				C455032D18BCB48D00E394A3 /* InfoPlist.strings in Resources */,
+				81A20B0D18D3AA96000D5FA7 /* CustomTableViewCell.xib in Resources */,
 				C4DAC98D18BE8A4900CF9036 /* image2.jpg in Resources */,
 				C455033518BCB48D00E394A3 /* Images.xcassets in Resources */,
 				C478375518D238C90093AE5F /* Blue.jpg in Resources */,
@@ -515,6 +524,7 @@
 				C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */,
 				81EB3B5D18C13CB000B443E4 /* BounceyTransition.m in Sources */,
 				C4BA30D418BD65E0003FB8FE /* Answer.m in Sources */,
+				81A20B0B18D3AA64000D5FA7 /* CustomTableViewCell.m in Sources */,
 				C4BA30CB18BD63FD003FB8FE /* Statement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

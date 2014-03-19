@@ -9,6 +9,9 @@
 #import "ResponseViewController.h"
 #import "BounceyTransition.h"
 #import "Math.h"
+#import "CustomTableViewCell.h"
+#import "CommentsView.h"
+#import "CustomTableViewCell.h"
 
 @interface ResponseViewController ()
 
@@ -24,19 +27,67 @@
 @synthesize dynamicItem;
 @synthesize collision;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
+    
 }
 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+   // tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    return 8;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"customCell";
+    [tableView setDelegate:self];
+    [tableView setDataSource:self];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [self.arrItems objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self.viewComments.customTableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"customCell"];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.arrItems = [[NSArray alloc] initWithObjects:@"Item 1",@"Item 2",
+                     @"Item 3",@"Item 4",@"Item 5",@"Item 6",@"Item 7", @"Item 8", nil];
+    
+    [viewComments.customTableView setDelegate:self];
+    [viewComments.customTableView setDataSource:self];
+  //   [self.view addSubview:viewComments.customTableView
+ //     ];
+    
     
     //Styling Homescreen button
     _returnToHomeScreen.buttonColor = [UIColor turquoiseColor];
@@ -67,13 +118,19 @@
     //Create collision for snap
     collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
     
-    //Create the forceBounce behavior
+    //Create the forceBounce behaviorself.tableView = [[KBSMoreTableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
+
     forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
     
     //Add the gravity properties
     [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
     
-}
+    
+    
+    
+    }
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -101,10 +158,12 @@
     
 }
 
-- (IBAction)panComments:(UIPanGestureRecognizer *)sender {
+- (IBAction)panComments:(UIPanGestureRecognizer *)sender
+{
     
     
-    switch (sender.state){
+    switch (sender.state)
+    {
             
         case UIGestureRecognizerStateBegan:{
 
@@ -145,8 +204,8 @@
                                     fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                     toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
 
-            
-            [animator addBehavior:bounce];
+                
+                [animator addBehavior:bounce];
             
             }
             else{

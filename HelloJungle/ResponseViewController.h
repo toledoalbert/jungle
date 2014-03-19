@@ -11,8 +11,15 @@
 #import "BounceBehavior.h"
 #import "CustomSnapBehavior.h"
 #import "ForceBounceBehavior.h"
+#import "CommentsView.h"
+#import "CustomTableViewCell.h"
+#import "AppDelegate.h"
 
-@interface ResponseViewController : UIViewController<UIViewControllerTransitioningDelegate>
+@interface ResponseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    //Attributes - Array
+    NSArray *items;
+}
 
 //Attributes - Buttons
 @property (weak, nonatomic) IBOutlet FUIButton *returnToHomeScreen;
@@ -21,7 +28,9 @@
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 
 //Attributes - View for comments
-@property (strong, nonatomic) IBOutlet UIView *viewComments;
+@property (strong, nonatomic) IBOutlet CommentsView *viewComments;
+
+@property (nonatomic,strong) NSArray *arrItems;
 
 
 //Attributes - Behaviors
@@ -30,8 +39,6 @@
 @property (strong, nonatomic) CustomSnapBehavior *snapComments;
 @property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
 @property (strong, nonatomic) UICollisionBehavior *collision;
-
-
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;

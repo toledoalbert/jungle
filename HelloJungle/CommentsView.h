@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentsView : UIView
+{
+    //Attributes - Array
+    NSArray *items;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
-//Attributes - Views
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *customTableView;
+@property (nonatomic,strong) NSArray *arrItems;
+@property (strong, nonatomic) IBOutlet UITextField *inputTextField;
+@property (strong, nonatomic) IBOutlet UIButton *submitTextButton;
+
+
 
 @end

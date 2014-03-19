@@ -7,25 +7,32 @@
 //
 
 #import "CommentsView.h"
+#import "CustomTableViewCell.h"
 
 @implementation CommentsView
+
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         // Initialization code
         
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if ((self = [super initWithCoder:aDecoder])) {
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
         [self addSubview:[[[NSBundle mainBundle] loadNibNamed:@"CommentsView" owner:self options:nil] objectAtIndex:0]];
     }
     return self;
+    
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
