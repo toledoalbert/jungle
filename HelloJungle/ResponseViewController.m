@@ -42,6 +42,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    //Returning one section in the table view
     return 1;
 }
 
@@ -49,6 +50,8 @@
 {
     
    // tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    //returning 8 items in the row, in the tableview
     return 8;
 }
 
