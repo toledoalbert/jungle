@@ -8,6 +8,7 @@
 
 #import "CommentsView.h"
 #import "CustomTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation CommentsView
 
@@ -28,6 +29,10 @@
     if ((self = [super initWithCoder:aDecoder]))
     {
         [self addSubview:[[[NSBundle mainBundle] loadNibNamed:@"CommentsView" owner:self options:nil] objectAtIndex:0]];
+        
+        self.layer.borderColor = [UIColor blackColor].CGColor;
+        self.layer.borderWidth = 3.0f;
+        
     }
     return self;
     

@@ -16,15 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="268" height="471"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVR-iU-UBz">
-                    <rect key="frame" x="92" y="26" width="85" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVR-iU-UBz">
+                    <rect key="frame" x="75" y="18" width="119" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="deN-IH-ovz">
-                    <rect key="frame" x="9" y="63" width="250" height="354"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="deN-IH-ovz">
+                    <rect key="frame" x="0.0" y="47" width="268" height="375"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="o3l-lM-tHk"/>
@@ -38,22 +37,16 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpR-M0-lDZ">
-                    <rect key="frame" x="213" y="430" width="46" height="30"/>
+                    <rect key="frame" x="211" y="430" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button">
+                        <color key="titleColor" red="0.1164998543" green="0.02445632373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstItem="deN-IH-ovz" firstAttribute="top" secondItem="1" secondAttribute="top" constant="63" id="5Bn-6o-fnh"/>
-                <constraint firstAttribute="bottom" secondItem="DVR-iU-UBz" secondAttribute="bottom" constant="424" id="Rw2-4D-c59"/>
-                <constraint firstItem="DVR-iU-UBz" firstAttribute="top" secondItem="1" secondAttribute="top" constant="26" id="uj0-FK-7Cr"/>
-                <constraint firstAttribute="centerY" secondItem="deN-IH-ovz" secondAttribute="centerY" id="w1V-WT-ESw"/>
-                <constraint firstAttribute="centerX" secondItem="deN-IH-ovz" secondAttribute="centerX" id="wUu-wf-rb5"/>
-                <constraint firstAttribute="centerY" secondItem="DVR-iU-UBz" secondAttribute="centerY" constant="199" id="yus-F7-6fa"/>
-            </constraints>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

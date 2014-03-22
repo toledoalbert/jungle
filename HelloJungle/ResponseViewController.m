@@ -12,6 +12,7 @@
 #import "CustomTableViewCell.h"
 #import "CommentsView.h"
 #import "CustomTableViewCell.h"
+#import "QuartzCore/CALayer.h"
 
 @interface ResponseViewController ()
 
@@ -60,10 +61,10 @@
 {
     static NSString *simpleTableIdentifier = @"customCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = [self.arrItems objectAtIndex:indexPath.row];
@@ -74,15 +75,25 @@
 {
     [super awakeFromNib];
     
-    [self.viewComments.customTableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"customCell"];
-}
+    [self.viewComments.customTableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil]
+                            forCellReuseIdentifier:@"customCell"];
+    viewComments.layer.shadowColor = [UIColor purpleColor].CGColor;
+    viewComments.layer.shadowOffset = CGSizeMake(0, 1);
+    viewComments.layer.shadowOpacity = 1;
+    viewComments.layer.shadowRadius = 1.0;
+    viewComments.clipsToBounds = NO;
+   }
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-
+    
+    
     self.arrItems = [[NSArray alloc] initWithObjects:@"Item 1",@"Item 2",
                      @"Item 3",@"Item 4",@"Item 5",@"Item 6",@"Item 7", @"Item 8", nil];
+   
+
     
     [viewComments.customTableView setDelegate:self];
     [viewComments.customTableView setDataSource:self];
@@ -172,7 +183,12 @@
             break;
             
         }
-        case UIGestureRecognizerStateChanged:{
+        case UIGestureRecognizerStateChanged:
+        {
+            
+            CGPoint velocity = [sender velocityInView:self.view];
+            
+            
             
             CGPoint translation = [sender translationInView:sender.view];
             sender.view.center = CGPointMake(sender.view.center.x,
@@ -199,12 +215,18 @@
             
             CGPoint velocity = [sender velocityInView:self.view];
             
+            
             //if(sender.view.center.y > 567.5){
-            if(velocity.y > 0 || sender.view.center.y > 667.5){
+            if(velocity.y > 0 || sender.view.center.y > 667.5)
+            {
+                
+                
+            
+                
             [bounce addBorderhWithIdentifer:@"Ground"
                                     fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                     toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
-
+            
                 
                 [animator addBehavior:bounce];
             
