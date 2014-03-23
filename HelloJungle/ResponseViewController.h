@@ -19,6 +19,11 @@
 {
     //Attributes - Array
     NSArray *items;
+    CGPoint nowPosition;
+    float alpha;
+    CGPoint lastPosition;
+    float new_alpha;
+    CGFloat currentPosition;
 }
 
 //Attributes - Buttons
@@ -33,12 +38,15 @@
 @property (nonatomic,strong) NSArray *arrItems;
 
 
+
+
 //Attributes - Behaviors
 @property (strong, nonatomic) BounceBehavior *bounce;
 @property (strong, nonatomic) ForceBounceBehavior *forceBounce;
 @property (strong, nonatomic) CustomSnapBehavior *snapComments;
 @property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
 @property (strong, nonatomic) UICollisionBehavior *collision;
+@property (strong, nonatomic) IBOutlet UIView *shadowView;
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;

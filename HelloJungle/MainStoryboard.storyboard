@@ -93,6 +93,14 @@
                                     <action selector="returnToHomeView:" destination="0qm-3D-e9c" eventType="touchUpInside" id="grs-0T-HI0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74l-7k-ncp">
+                                <rect key="frame" x="0.0" y="-7" width="320" height="575"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-WC-YC6" customClass="CommentsView">
                                 <rect key="frame" x="26" y="502" width="268" height="471"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -113,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
+                        <outlet property="shadowView" destination="74l-7k-ncp" id="c0B-hl-Bcq"/>
                         <outlet property="viewComments" destination="hxj-WC-YC6" id="ECW-gY-Gmw"/>
                         <segue destination="znd-QO-WKi" kind="modal" identifier="segueToHomeView" modalTransitionStyle="flipHorizontal" id="YE1-xv-XYD"/>
                     </connections>

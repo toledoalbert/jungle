@@ -31,8 +31,11 @@
         [self addSubview:[[[NSBundle mainBundle] loadNibNamed:@"CommentsView" owner:self options:nil] objectAtIndex:0]];
         
         self.layer.borderColor = [UIColor blackColor].CGColor;
-        self.layer.borderWidth = 3.0f;
-        
+        self.layer.borderWidth = 1.0f;
+        self.layer.shadowColor = [[UIColor blackColor] CGColor];
+        self.layer.shadowOffset = CGSizeMake(5.0f,5.0f);
+        self.layer.shadowOpacity = 1.0f;
+        self.layer.shadowRadius = 5.0f;
     }
     return self;
     

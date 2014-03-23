@@ -29,6 +29,7 @@
 @synthesize collision;
 
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -77,11 +78,7 @@
     
     [self.viewComments.customTableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil]
                             forCellReuseIdentifier:@"customCell"];
-    viewComments.layer.shadowColor = [UIColor purpleColor].CGColor;
-    viewComments.layer.shadowOffset = CGSizeMake(0, 1);
-    viewComments.layer.shadowOpacity = 1;
-    viewComments.layer.shadowRadius = 1.0;
-    viewComments.clipsToBounds = NO;
+    
    }
 
 - (void)viewDidLoad
@@ -114,7 +111,7 @@
     bounce = [[BounceBehavior alloc] initWithItems:@[viewComments]];
     
     //set the gravity for bounce
-    [bounce setGravityWithDirection:0.0 andMagnitude:1.0];
+    [bounce setGravityWithDirection:0.0 andMagnitude:15.0];
     
     //set the collision border for bounce
     [bounce addBorderhWithIdentifer:@"Ground"
@@ -136,8 +133,11 @@
     
     //Add the gravity properties
     [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
+
     
-    
+    self.shadowView.alpha = 0.0;
+    self.shadowView.hidden = YES;
+    currentPosition = 0.0;
     
     
     }
@@ -168,27 +168,30 @@
     //Create a push behavior with two UIViews and a continuous 'push' mode
     [animator addBehavior:forceBounce];
     
+    
+    
 }
 
 - (IBAction)panComments:(UIPanGestureRecognizer *)sender
 {
     
-    
+   
     switch (sender.state)
     {
             
         case UIGestureRecognizerStateBegan:{
-
+            
             [animator removeAllBehaviors];
             break;
             
         }
         case UIGestureRecognizerStateChanged:
         {
+            [self.view insertSubview:self.shadowView belowSubview:viewComments];
+             self.shadowView.hidden = NO;
+      
             
             CGPoint velocity = [sender velocityInView:self.view];
-            
-            
             
             CGPoint translation = [sender translationInView:sender.view];
             sender.view.center = CGPointMake(sender.view.center.x,
@@ -200,10 +203,27 @@
             NSLog(@"y:%f x:%f", sender.view.center.y, sender.view.center.x);
             
             
+            CGFloat currentFrame = sender.view.frame.origin.y;
+            
+             if(velocity.y < 0)
+                 currentPosition = 1 - (currentFrame/(502));
+                    if(currentPosition > 0.5)
+                        currentPosition = 0.5;
+            
+             if(velocity.y > 0)
+                 currentPosition = 1 - (currentFrame/(502));
+                 if(currentPosition < 0.0)
+                     currentPosition = 0.0;
+            
+            if(currentPosition > 0.5)
+                currentPosition = 0.5;
+                 self.shadowView.alpha = currentPosition;
+            
+            
             CGFloat xVelocity = [sender velocityInView:sender.view].x;
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
-            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            //[dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
             [animator addBehavior:dynamicItem];
             
@@ -213,15 +233,18 @@
         }
         case UIGestureRecognizerStateEnded:{
             
+            
+            
             CGPoint velocity = [sender velocityInView:self.view];
+            CGFloat currentPosition = sender.view.center.y;
             
             
             //if(sender.view.center.y > 567.5){
             if(velocity.y > 0 || sender.view.center.y > 667.5)
             {
                 
-                
-            
+           
+                 self.shadowView.alpha = 0.0;
                 
             [bounce addBorderhWithIdentifer:@"Ground"
                                     fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
@@ -244,6 +267,7 @@
                 
                 [animator addBehavior:collision];
                 [animator addBehavior:snapComments];
+                self.shadowView.alpha = 0.5;
                 
             }
             
