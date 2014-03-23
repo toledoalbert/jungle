@@ -206,17 +206,17 @@
             CGFloat currentFrame = sender.view.frame.origin.y;
             
              if(velocity.y < 0)
-                 currentPosition = 1 - (currentFrame/(502));
-                    if(currentPosition > 0.5)
-                        currentPosition = 0.5;
+                 currentPosition = 1 - (currentFrame/(490));
+                    if(currentPosition > 0.6)
+                        currentPosition = 0.6;
             
              if(velocity.y > 0)
-                 currentPosition = 1 - (currentFrame/(502));
+                 currentPosition = 1 - (currentFrame/(490));
                  if(currentPosition < 0.0)
                      currentPosition = 0.0;
             
-            if(currentPosition > 0.5)
-                currentPosition = 0.5;
+            if(currentPosition > 0.6)
+                currentPosition = 0.6;
                  self.shadowView.alpha = currentPosition;
             
             
@@ -236,10 +236,7 @@
             
             
             CGPoint velocity = [sender velocityInView:self.view];
-            CGFloat currentPosition = sender.view.center.y;
-            
-            
-            //if(sender.view.center.y > 567.5){
+        
             if(velocity.y > 0 || sender.view.center.y > 667.5)
             {
                 
@@ -267,7 +264,7 @@
                 
                 [animator addBehavior:collision];
                 [animator addBehavior:snapComments];
-                self.shadowView.alpha = 0.5;
+                self.shadowView.alpha = 0.6;
                 
             }
             
