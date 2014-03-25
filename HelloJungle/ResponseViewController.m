@@ -54,7 +54,7 @@
    // tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     //returning 8 items in the row, in the tableview
-    return 8;
+    return self.commentItems.count;
 }
 
 
@@ -65,10 +65,15 @@
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
+        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+        cell = [topLevelObjects objectAtIndex:0];
     }
     
-    cell.textLabel.text = [self.arrItems objectAtIndex:indexPath.row];
+    cell.mainTextLabel.text = [self.commentItems objectAtIndex:indexPath.row];
+    cell.mainTextLabel.textColor = [UIColor blackColor];
+    
     return cell;
 }
 
@@ -80,20 +85,63 @@
                             forCellReuseIdentifier:@"customCell"];
     
    }
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSString *input = textField.text;
+    
+    [self appendElementsToArray:input];
+    
+    textField.text = @"";
+    
+    [self animateTextField: textField up: NO];
+}
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    const int movementDistance = 190; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+-(void)appendElementsToArray:(NSString *)inputString
+{
+    NSArray* tempArray = [[NSArray alloc] initWithObjects:inputString, nil];
+    
+    NSArray *tempArray2 = [self.commentItems arrayByAddingObjectsFromArray:tempArray];
+    
+    self.commentItems = tempArray2;
+    [viewComments.customTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    
+}//end method
 
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
     
-    
-    self.arrItems = [[NSArray alloc] initWithObjects:@"Item 1",@"Item 2",
-                     @"Item 3",@"Item 4",@"Item 5",@"Item 6",@"Item 7", @"Item 8", nil];
-   
 
-    
+    self.commentItems = [[NSArray alloc] initWithObjects:nil];
+   
     [viewComments.customTableView setDelegate:self];
     [viewComments.customTableView setDataSource:self];
+    [viewComments.textFieldInput setDelegate:self];
   //   [self.view addSubview:viewComments.customTableView
  //     ];
     
@@ -206,12 +254,12 @@
             CGFloat currentFrame = sender.view.frame.origin.y;
             
              if(velocity.y < 0)
-                 currentPosition = 1 - (currentFrame/(490));
+                 currentPosition = 1 - (currentFrame/(365));
                     if(currentPosition > 0.6)
                         currentPosition = 0.6;
             
              if(velocity.y > 0)
-                 currentPosition = 1 - (currentFrame/(490));
+                 currentPosition = 1 - (currentFrame/(365));
                  if(currentPosition < 0.0)
                      currentPosition = 0.0;
             
@@ -223,7 +271,7 @@
             CGFloat xVelocity = [sender velocityInView:sender.view].x;
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
-            //[dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
             [animator addBehavior:dynamicItem];
             

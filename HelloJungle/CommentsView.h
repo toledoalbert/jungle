@@ -16,10 +16,14 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
+//Attributes - UIElements
 @property (strong, nonatomic) IBOutlet UITableView *customTableView;
 @property (nonatomic,strong) NSArray *arrItems;
 @property (strong, nonatomic) IBOutlet UITextField *inputTextField;
 @property (strong, nonatomic) IBOutlet UIButton *submitTextButton;
+@property (nonatomic, retain) IBOutlet UITextField *textFieldInput;
+- (IBAction)postToCommentsButton:(id)sender;
+
 
 
 

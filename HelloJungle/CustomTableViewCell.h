@@ -11,7 +11,13 @@
 @interface CustomTableViewCell : UITableViewCell
 
 //Attributes - Views
-@property (strong, nonatomic) IBOutlet UILabel *leftLabel;
+@property (strong, nonatomic) IBOutlet UILabel *mainTextLabel;
+
+
+
+
+
+
 
 
 

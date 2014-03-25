@@ -51,4 +51,8 @@
 }
 */
 
+- (IBAction)postToCommentsButton:(id)sender
+{
+    [self.textFieldInput resignFirstResponder];
+}
 @end

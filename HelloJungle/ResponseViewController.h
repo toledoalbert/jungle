@@ -15,10 +15,9 @@
 #import "CustomTableViewCell.h"
 #import "AppDelegate.h"
 
-@interface ResponseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ResponseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     //Attributes - Array
-    NSArray *items;
     CGPoint nowPosition;
     float alpha;
     CGPoint lastPosition;
@@ -35,10 +34,7 @@
 //Attributes - View for comments
 @property (strong, nonatomic) IBOutlet CommentsView *viewComments;
 
-@property (nonatomic,strong) NSArray *arrItems;
-
-
-
+@property (nonatomic,strong) NSArray *commentItems;
 
 //Attributes - Behaviors
 @property (strong, nonatomic) BounceBehavior *bounce;
@@ -52,5 +48,21 @@
 - (IBAction)returnToHomeView:(id)sender;
 - (IBAction)tapComments:(id)sender;
 - (IBAction)panComments:(UIPanGestureRecognizer *)sender;
+
+//Attributes - TableView methods
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+
+//Attributes - Initializing the Nib
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+- (void)awakeFromNib;
+
+//Attributes - TextField method
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+
+//Method
+-(void)appendElementsToArray:(NSString *)inputString;
+
 
 @end
