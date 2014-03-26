@@ -23,7 +23,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="deN-IH-ovz">
-                    <rect key="frame" x="0.0" y="85" width="268" height="337"/>
+                    <rect key="frame" x="0.0" y="61" width="268" height="337"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="o3l-lM-tHk"/>

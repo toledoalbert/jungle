@@ -72,7 +72,7 @@
     }
     
     cell.mainTextLabel.text = [self.commentItems objectAtIndex:indexPath.row];
-    cell.mainTextLabel.textColor = [UIColor blackColor];
+   
     
     return cell;
 }
@@ -139,6 +139,7 @@
 
     self.commentItems = [[NSArray alloc] initWithObjects:nil];
    
+    [viewComments.customTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [viewComments.customTableView setDelegate:self];
     [viewComments.customTableView setDataSource:self];
     [viewComments.textFieldInput setDelegate:self];

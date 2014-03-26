@@ -12,6 +12,8 @@
 
 //Attributes - Views
 @property (strong, nonatomic) IBOutlet UILabel *mainTextLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
+@property (strong, nonatomic) IBOutlet UIImageView *borderImage;
 
 
 

@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTableViewCell"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="QSC-Y6-WKo" customClass="CustomTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="268" height="94"/>
+            <rect key="frame" x="0.0" y="0.0" width="268" height="51"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="mainTextLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="BCC-uk-IO2">
@@ -16,25 +16,39 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z91-LZ-drQ">
-                    <rect key="frame" x="11" y="9" width="44" height="39"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="z91-LZ-drQ">
+                    <rect key="frame" x="8" y="6" width="44" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qSg-Yh-Aw1">
+                    <rect key="frame" x="0.0" y="50" width="268" height="1"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="z91-LZ-drQ" secondAttribute="bottom" constant="46" id="9t0-Lc-V5W"/>
+                <constraint firstAttribute="centerX" secondItem="qSg-Yh-Aw1" secondAttribute="centerX" id="18U-6c-Vcw"/>
+                <constraint firstItem="z91-LZ-drQ" firstAttribute="top" secondItem="QSC-Y6-WKo" secondAttribute="top" constant="6" id="D5O-8d-ZJz"/>
                 <constraint firstItem="BCC-uk-IO2" firstAttribute="top" secondItem="QSC-Y6-WKo" secondAttribute="top" constant="9" id="Ghp-3y-lje"/>
-                <constraint firstItem="z91-LZ-drQ" firstAttribute="top" secondItem="QSC-Y6-WKo" secondAttribute="top" constant="9" id="Sp6-hy-N7w"/>
-                <constraint firstAttribute="trailing" secondItem="BCC-uk-IO2" secondAttribute="trailing" constant="36" id="VXX-Fh-tFy"/>
-                <constraint firstItem="z91-LZ-drQ" firstAttribute="leading" secondItem="QSC-Y6-WKo" secondAttribute="leading" constant="11" id="cMK-wU-UF6"/>
-                <constraint firstItem="BCC-uk-IO2" firstAttribute="leading" secondItem="z91-LZ-drQ" secondAttribute="trailing" constant="8" id="eiL-8R-N00"/>
-                <constraint firstAttribute="centerX" secondItem="z91-LZ-drQ" secondAttribute="centerX" constant="101" id="i5V-8e-Tz5"/>
+                <constraint firstItem="BCC-uk-IO2" firstAttribute="leading" secondItem="z91-LZ-drQ" secondAttribute="trailing" constant="11" id="HRP-q0-SGy"/>
+                <constraint firstAttribute="trailing" secondItem="qSg-Yh-Aw1" secondAttribute="trailing" id="HjH-3q-bLa"/>
+                <constraint firstAttribute="centerX" secondItem="z91-LZ-drQ" secondAttribute="centerX" constant="104" id="KVf-Nh-5Z2"/>
+                <constraint firstItem="z91-LZ-drQ" firstAttribute="leading" secondItem="QSC-Y6-WKo" secondAttribute="leading" constant="8" id="RRa-C9-Jve"/>
+                <constraint firstAttribute="bottom" secondItem="qSg-Yh-Aw1" secondAttribute="bottom" id="e4m-RY-BZ7"/>
+                <constraint firstAttribute="bottom" secondItem="z91-LZ-drQ" secondAttribute="bottom" constant="6" id="k53-6H-C9p"/>
+                <constraint firstAttribute="trailing" secondItem="BCC-uk-IO2" secondAttribute="trailing" constant="36" id="kMB-MO-Qv2"/>
+                <constraint firstAttribute="centerY" secondItem="qSg-Yh-Aw1" secondAttribute="centerY" constant="-25" id="n4t-fd-53b"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="borderImage" destination="qSg-Yh-Aw1" id="coF-hW-DNJ"/>
+                <outlet property="iconImage" destination="z91-LZ-drQ" id="eAI-GK-D9v"/>
                 <outlet property="mainTextLabel" destination="BCC-uk-IO2" id="m80-vK-CnL"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="Blue.jpg" width="40" height="40"/>
+        <image name="image3.jpeg" width="237" height="213"/>
+    </resources>
 </document>

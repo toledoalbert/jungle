@@ -15,7 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        
+         [self.mainTextLabel sizeToFit];
     }
     return self;
 }
