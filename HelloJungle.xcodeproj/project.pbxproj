@@ -34,6 +34,8 @@
 		C478375818D238C90093AE5F /* Pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375218D238C90093AE5F /* Pink.jpg */; };
 		C478375918D238C90093AE5F /* Red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375318D238C90093AE5F /* Red.jpg */; };
 		C478375A18D238C90093AE5F /* Yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C478375418D238C90093AE5F /* Yellow.jpg */; };
+		C4944B5118E28280009783D4 /* Black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4944B4F18E28280009783D4 /* Black.jpg */; };
+		C4944B5218E28280009783D4 /* JIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4944B5018E28280009783D4 /* JIcon.png */; };
 		C4ABAA4718D0EE5E00AB3744 /* ForceBounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */; };
 		C4ABAA4A18D0EED800AB3744 /* BounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4918D0EED800AB3744 /* BounceBehavior.m */; };
 		C4ABAA4D18D0EEF500AB3744 /* CustomSnapBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ABAA4C18D0EEF500AB3744 /* CustomSnapBehavior.m */; };
@@ -104,6 +106,8 @@
 		C478375218D238C90093AE5F /* Pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pink.jpg; sourceTree = "<group>"; };
 		C478375318D238C90093AE5F /* Red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Red.jpg; sourceTree = "<group>"; };
 		C478375418D238C90093AE5F /* Yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yellow.jpg; sourceTree = "<group>"; };
+		C4944B4F18E28280009783D4 /* Black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Black.jpg; sourceTree = "<group>"; };
+		C4944B5018E28280009783D4 /* JIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JIcon.png; sourceTree = "<group>"; };
 		C4ABAA4518D0EE5E00AB3744 /* ForceBounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceBounceBehavior.h; sourceTree = "<group>"; };
 		C4ABAA4618D0EE5E00AB3744 /* ForceBounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceBounceBehavior.m; sourceTree = "<group>"; };
 		C4ABAA4818D0EED800AB3744 /* BounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceBehavior.h; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		C4BA30BE18BD5ED9003FB8FE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C4944B4F18E28280009783D4 /* Black.jpg */,
+				C4944B5018E28280009783D4 /* JIcon.png */,
 				C478374F18D238C90093AE5F /* Blue.jpg */,
 				C478375018D238C90093AE5F /* Green.jpg */,
 				C478375118D238C90093AE5F /* Orange.jpg */,
@@ -439,6 +445,7 @@
 			files = (
 				C4DAC98F18BE8A4900CF9036 /* image4.jpg in Resources */,
 				C478375918D238C90093AE5F /* Red.jpg in Resources */,
+				C4944B5118E28280009783D4 /* Black.jpg in Resources */,
 				C478375A18D238C90093AE5F /* Yellow.jpg in Resources */,
 				C478375718D238C90093AE5F /* Orange.jpg in Resources */,
 				C478375818D238C90093AE5F /* Pink.jpg in Resources */,
@@ -447,6 +454,7 @@
 				C4DAC98C18BE8A4900CF9036 /* image1.jpg in Resources */,
 				C478375618D238C90093AE5F /* Green.jpg in Resources */,
 				C4DAC98E18BE8A4900CF9036 /* image3.jpeg in Resources */,
+				C4944B5218E28280009783D4 /* JIcon.png in Resources */,
 				C4BA30C118BD5F28003FB8FE /* Planning.txt in Resources */,
 				C42B16FA18BEB3940063FEB0 /* PostView.xib in Resources */,
 				C4ABAA4F18D15EB100AB3744 /* CommentsView.xib in Resources */,
