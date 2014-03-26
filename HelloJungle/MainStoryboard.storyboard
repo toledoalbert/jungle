@@ -16,17 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-Em-sya" customClass="FUIButton">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Answer or Comment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="segueToResponseView:" destination="znd-QO-WKi" eventType="touchUpInside" id="Tdk-te-w0T"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-bJ-FCp" customClass="SwipeView">
                                 <rect key="frame" x="0.0" y="87" width="320" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,28 +35,48 @@
                                     <outletCollection property="gestureRecognizers" destination="P8q-LJ-dts" appends="YES" id="Z4f-aW-zcT"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pJu-wv-QlK" customClass="CommentsView">
+                                <rect key="frame" x="26" y="502" width="268" height="471"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3vP-Wf-FdD" appends="YES" id="GVz-Uc-J2U"/>
+                                    <outletCollection property="gestureRecognizers" destination="CNf-an-jEa" appends="YES" id="LBB-Cp-0AX"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0id-3j-sRa"/>
                     <connections>
-                        <outlet property="buttonAnswerComment" destination="TBH-Em-sya" id="8fp-ix-qJd"/>
                         <outlet property="swipeView" destination="yFi-bJ-FCp" id="dWn-0P-ova"/>
                         <outlet property="theNewPostView" destination="VqB-Nu-DAG" id="uU1-ue-f9N"/>
+                        <outlet property="viewComments" destination="pJu-wv-QlK" id="zzd-YO-uoJ"/>
                         <segue destination="0qm-3D-e9c" kind="modal" identifier="segueToResponseView" modalTransitionStyle="flipHorizontal" id="4T9-AQ-7wJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHM-DV-W1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ihT-ZS-nlR">
-                    <connections>
-                        <action selector="tapGesture:" destination="znd-QO-WKi" id="MHs-Rk-qeF"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="P8q-LJ-dts">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="P8q-LJ-dts" userLabel="Pan Gesture - New Post">
                     <connections>
                         <action selector="panGesture:" destination="znd-QO-WKi" id="LSq-Ne-aoe"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="ihT-ZS-nlR" userLabel="Tap Gesture - New Post">
+                    <connections>
+                        <action selector="tapGesture:" destination="znd-QO-WKi" id="MHs-Rk-qeF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3vP-Wf-FdD" userLabel="Pan Gesture - Comment">
+                    <connections>
+                        <action selector="commentPanGesture:" destination="znd-QO-WKi" id="mDp-7n-2wl"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="CNf-an-jEa" userLabel="Tap Gesture - Comment">
+                    <connections>
+                        <action selector="commentTapGesture:" destination="znd-QO-WKi" id="2zE-uc-EBG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-169" y="-288"/>
         </scene>
@@ -118,16 +127,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="74a-DI-nTY">
-                    <connections>
-                        <action selector="tapComments:" destination="0qm-3D-e9c" id="0dC-hB-QVn"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="6D8-HE-LJR">
                     <connections>
                         <action selector="panComments:" destination="0qm-3D-e9c" id="tga-4L-mo0"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="74a-DI-nTY">
+                    <connections>
+                        <action selector="tapComments:" destination="0qm-3D-e9c" id="0dC-hB-QVn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="378" y="465"/>
         </scene>

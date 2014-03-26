@@ -16,22 +16,56 @@
 #import "BounceBehavior.h"
 #import "ForceBounceBehavior.h"
 #import "CustomSnapBehavior.h"
+#import "CommentsView.h"
+#import "CustomTableViewCell.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+{
+    //Attributes - Array
+    CGPoint nowPosition;
+    float alpha;
+    CGPoint lastPosition;
+    float new_alpha;
+    CGFloat currentPosition;
+}
 
-//Attributes for UI Elements
-@property (strong, nonatomic) IBOutlet FUIButton *buttonNewPost;
-@property (strong, nonatomic) IBOutlet FUIButton *buttonAnswerComment;
-@property (strong, nonatomic) IBOutlet SwipeView *swipeView;
-@property (strong, nonatomic) IBOutlet NewPostView *theNewPostView;
+//ResponseView Merge
+@property (strong, nonatomic) IBOutlet CommentsView *viewComments;
 
-
-//Attributes Behaviors
+//Attributes - Behaviors
 @property (strong, nonatomic) BounceBehavior *bounce;
 @property (strong, nonatomic) ForceBounceBehavior *forceBounce;
 @property (strong, nonatomic) CustomSnapBehavior *snapComments;
 @property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
 @property (strong, nonatomic) UICollisionBehavior *collision;
+@property (strong, nonatomic) UIView *shadowView;
+
+//Array
+@property (nonatomic,strong) NSArray *commentItems;
+
+
+
+
+
+
+
+
+
+
+
+//Attributes for UI Elements
+@property (strong, nonatomic) IBOutlet SwipeView *swipeView;
+@property (strong, nonatomic) IBOutlet NewPostView *theNewPostView;
+
+
+//Attributes Behaviors/
+/*
+@property (strong, nonatomic) BounceBehavior *bounce;
+@property (strong, nonatomic) ForceBounceBehavior *forceBounce;
+@property (strong, nonatomic) CustomSnapBehavior *snapComments;
+@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
+@property (strong, nonatomic) UICollisionBehavior *collision;
+ */
 
 
 //Attributes for data
@@ -51,6 +85,8 @@
 //Attributes gestures
 - (IBAction)tapGesture:(id)sender;
 - (IBAction)panGesture:(UIPanGestureRecognizer *)sender;
+- (IBAction)commentTapGesture:(UITapGestureRecognizer *)sender;
+- (IBAction)commentPanGesture:(UIPanGestureRecognizer *)sender;
 
 
 

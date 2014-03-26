@@ -25,6 +25,10 @@
 @synthesize dynamicItem;
 @synthesize collision;
 
+//Response View Attributes
+@synthesize viewComments;
+@synthesize shadowView;
+
 //Init with nib name method, not used at the moment
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +39,16 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 //View did load, this is where shit happens.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     //This was a test object. Tested successfully with Parse.
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -78,13 +88,6 @@
     ////////////////END SAMPLE DATA CREATION/////////////////
     
     
-	//Style the buttons.
-     _buttonNewPost.buttonColor = [UIColor turquoiseColor];
-    [_buttonNewPost setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-    
-    _buttonAnswerComment.buttonColor = [UIColor turquoiseColor];
-    [_buttonAnswerComment setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-    
     //configure swipe view
     _swipeView.alignment = SwipeViewAlignmentCenter;
     _swipeView.pagingEnabled = YES;
@@ -122,7 +125,151 @@
     [forceBounce setGravityWithDirection:-1.5*M_PI andMagnitude:15.0];
     
     
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////Resoonse View////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    
+    self.commentItems = [[NSArray alloc] initWithObjects:nil];
+    
+    [viewComments.customTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [viewComments.customTableView setDelegate:self];
+    [viewComments.customTableView setDataSource:self];
+    [viewComments.textFieldInput setDelegate:self];
+    
+    bounce = [[BounceBehavior alloc] initWithItems:@[viewComments]];
+    
+    //set the gravity for bounce
+    [bounce setGravityWithDirection:0.0 andMagnitude:15.0];
+    
+    //set the collision border for bounce
+    [bounce addBorderhWithIdentifer:@"Ground"
+                          fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                            toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+    
+    //Create the custom snap for comments
+    snapComments = [[CustomSnapBehavior alloc] initWithItem:viewComments
+                                             andSnaptoPoint:CGPointMake(160.0, 292.5)];
+    
+    [snapComments setDamping:1.2];
+    
+    //Create collision for snap
+    collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
+    
+    //Create the forceBounce behaviorself.tableView = [[KBSMoreTableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
+    
+    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
+    
+    //Add the gravity properties
+    [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
+    
+    self.shadowView = [[UIView alloc]initWithFrame:self.view.frame];
+    self.shadowView.backgroundColor = [UIColor blackColor];
+    self.shadowView.autoresizesSubviews = NO;
+    [self.view addSubview:self.shadowView];
+    
+    self.shadowView.alpha = 0.0;
+    self.shadowView.hidden = YES;
+    currentPosition = 0.0;
+    
+    
+    
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    //Returning one section in the table view
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    // tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    //returning 8 items in the row, in the tableview
+    return self.commentItems.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"customCell";
+    
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
+        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    cell.mainTextLabel.text = [self.commentItems objectAtIndex:indexPath.row];
+    
+    
+    return cell;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self.viewComments.customTableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil]
+                            forCellReuseIdentifier:@"customCell"];
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSString *input = textField.text;
+    
+    [self appendElementsToArray:input];
+    
+    textField.text = @"";
+    
+    [self animateTextField: textField up: NO];
+}
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    const int movementDistance = 190; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+-(void)appendElementsToArray:(NSString *)inputString
+{
+    NSArray* tempArray = [[NSArray alloc] initWithObjects:inputString, nil];
+    
+    NSArray *tempArray2 = [self.commentItems arrayByAddingObjectsFromArray:tempArray];
+    
+    self.commentItems = tempArray2;
+    [viewComments.customTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    
+}//end method
+
+
+
+
+
+
 
 //This method returns a number which will determine how many spots the swipe view will have.
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
@@ -267,6 +414,122 @@
                 [animator addBehavior:snapComments];
                 
             }
+            break;
+            
+        }
+            
+    }
+
+    
+}
+
+- (IBAction)commentTapGesture:(UITapGestureRecognizer *)sender
+{
+    
+    //Create the forceBounce behavior
+    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments] mode:@"groundMode"];
+    
+    //Create a push behavior with two UIViews and a continuous 'push' mode
+    [animator addBehavior:forceBounce];
+    
+
+    
+}
+
+- (IBAction)commentPanGesture:(UIPanGestureRecognizer *)sender
+{
+    switch (sender.state)
+    {
+            
+        case UIGestureRecognizerStateBegan:{
+            
+            [animator removeAllBehaviors];
+            break;
+            
+        }
+        case UIGestureRecognizerStateChanged:
+        {
+            [self.view insertSubview:self.shadowView belowSubview:viewComments];
+             self.shadowView.hidden = NO;
+            
+            
+            CGPoint velocity = [sender velocityInView:self.view];
+            
+            CGPoint translation = [sender translationInView:sender.view];
+            sender.view.center = CGPointMake(sender.view.center.x,
+                                             sender.view.center.y + translation.y);
+            
+            
+            [sender setTranslation:CGPointMake(0, 0) inView:sender.view];
+            
+            NSLog(@"y:%f x:%f", sender.view.center.y, sender.view.center.x);
+            
+            
+            CGFloat currentFrame = sender.view.frame.origin.y;
+            
+            if(velocity.y < 0)
+                currentPosition = 1 - (currentFrame/(365));
+            if(currentPosition > 0.6)
+                currentPosition = 0.6;
+            
+            if(velocity.y > 0)
+                currentPosition = 1 - (currentFrame/(365));
+            if(currentPosition < 0.0)
+                currentPosition = 0.0;
+            
+            if(currentPosition > 0.6)
+                currentPosition = 0.6;
+            self.shadowView.alpha = currentPosition;
+            
+            
+            CGFloat xVelocity = [sender velocityInView:sender.view].x;
+            CGFloat yVelocity = [sender velocityInView:sender.view].y;
+            
+            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            
+            [animator addBehavior:dynamicItem];
+            
+            
+            break;
+            
+        }
+        case UIGestureRecognizerStateEnded:{
+            
+            
+            
+            CGPoint velocity = [sender velocityInView:self.view];
+            
+            if(velocity.y > 0 || sender.view.center.y > 667.5)
+            {
+                
+                
+                self.shadowView.alpha = 0.0;
+                
+                [bounce addBorderhWithIdentifer:@"Ground"
+                                      fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
+                                        toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
+                
+                
+                [animator addBehavior:bounce];
+                
+            }
+            else{
+                
+                [collision addBoundaryWithIdentifier:@"Left"
+                                           fromPoint:CGPointMake(26.0f, 200.0f)
+                                             toPoint:CGPointMake(26.0f, 800.0f)];
+                
+                [collision addBoundaryWithIdentifier:@"Right"
+                                           fromPoint:CGPointMake(26.0f+268.0f, 200.0f)
+                                             toPoint:CGPointMake(26.0f+268.0f, 800.0f)];
+                
+                
+                [animator addBehavior:collision];
+                [animator addBehavior:snapComments];
+                self.shadowView.alpha = 0.6;
+                
+            }
+            
             break;
             
         }
