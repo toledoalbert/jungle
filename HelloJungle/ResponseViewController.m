@@ -16,6 +16,7 @@
 
 @interface ResponseViewController ()
 
+
 @end
 
 @implementation ResponseViewController;
@@ -27,6 +28,8 @@
 @synthesize snapComments;
 @synthesize dynamicItem;
 @synthesize collision;
+@synthesize shadowView;
+
 
 
 
@@ -183,11 +186,14 @@
     //Add the gravity properties
     [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
 
+    self.shadowView = [[UIView alloc]initWithFrame:self.view.frame];
+    self.shadowView.backgroundColor = [UIColor blackColor];
+    self.shadowView.autoresizesSubviews = NO;
+    [self.view addSubview:self.shadowView];
     
     self.shadowView.alpha = 0.0;
     self.shadowView.hidden = YES;
     currentPosition = 0.0;
-    
     
     }
 

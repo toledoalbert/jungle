@@ -42,7 +42,7 @@
 @property (strong, nonatomic) CustomSnapBehavior *snapComments;
 @property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
 @property (strong, nonatomic) UICollisionBehavior *collision;
-@property (strong, nonatomic) IBOutlet UIView *shadowView;
+@property (strong, nonatomic) UIView *shadowView;
 
 //Attributes - Actions
 - (IBAction)returnToHomeView:(id)sender;

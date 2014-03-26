@@ -93,14 +93,6 @@
                                     <action selector="returnToHomeView:" destination="0qm-3D-e9c" eventType="touchUpInside" id="grs-0T-HI0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74l-7k-ncp">
-                                <rect key="frame" x="0.0" y="-7" width="320" height="575"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-WC-YC6" customClass="CommentsView">
                                 <rect key="frame" x="26" y="502" width="268" height="471"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,7 +113,6 @@
                     </view>
                     <connections>
                         <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
-                        <outlet property="shadowView" destination="74l-7k-ncp" id="c0B-hl-Bcq"/>
                         <outlet property="viewComments" destination="hxj-WC-YC6" id="ECW-gY-Gmw"/>
                         <segue destination="znd-QO-WKi" kind="modal" identifier="segueToHomeView" modalTransitionStyle="flipHorizontal" id="YE1-xv-XYD"/>
                     </connections>
@@ -139,51 +130,6 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="378" y="465"/>
-        </scene>
-        <!--New Post View Controller-->
-        <scene sceneID="EoA-Lj-TEL">
-            <objects>
-                <viewController id="2aV-Ey-W4S" customClass="NewPostViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E6C-zj-5lY"/>
-                        <viewControllerLayoutGuide type="bottom" id="yWR-DA-W0l"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8qW-kY-msY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-F9-bbU">
-                                <rect key="frame" x="0.0" y="39" width="320" height="424"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ6-4F-cEO">
-                                <rect key="frame" x="38" y="502" width="84" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Picture">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePicture:" destination="2aV-Ey-W4S" eventType="touchUpInside" id="mvV-C2-aL8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-8G-VnW">
-                                <rect key="frame" x="201" y="502" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Picture">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectPicture:" destination="2aV-Ey-W4S" eventType="touchUpInside" id="DIm-Z7-xd7"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="q81-GY-tXy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NBv-4t-QX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="378" y="-964"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
