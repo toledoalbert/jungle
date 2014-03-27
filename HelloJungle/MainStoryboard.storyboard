@@ -83,60 +83,30 @@
         <!--Response View Controller-->
         <scene sceneID="19l-0B-lrl">
             <objects>
-                <viewController id="0qm-3D-e9c" customClass="ResponseViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T6g-K6-JO1"/>
-                        <viewControllerLayoutGuide type="bottom" id="PCo-6F-VI2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y04-8k-aYL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0F-5n-SO1" customClass="FUIButton">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Return to HomeScreen">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnToHomeView:" destination="0qm-3D-e9c" eventType="touchUpInside" id="grs-0T-HI0"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-WC-YC6" customClass="CommentsView">
-                                <rect key="frame" x="26" y="502" width="268" height="471"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="74a-DI-nTY" appends="YES" id="103-Us-gBT"/>
-                                    <outletCollection property="gestureRecognizers" destination="6D8-HE-LJR" appends="YES" id="v3k-LL-SKJ"/>
-                                </connections>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hxj-WC-YC6" secondAttribute="trailing" constant="26" id="9M8-Yu-5n4"/>
-                            <constraint firstItem="hxj-WC-YC6" firstAttribute="leading" secondItem="y04-8k-aYL" secondAttribute="leading" constant="26" id="ps2-Pm-IUB"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="returnToHomeScreen" destination="D0F-5n-SO1" id="zsn-TR-0hW"/>
-                        <outlet property="viewComments" destination="hxj-WC-YC6" id="ECW-gY-Gmw"/>
-                        <segue destination="znd-QO-WKi" kind="modal" identifier="segueToHomeView" modalTransitionStyle="flipHorizontal" id="YE1-xv-XYD"/>
-                    </connections>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-TX-y5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="6D8-HE-LJR">
-                    <connections>
-                        <action selector="panComments:" destination="0qm-3D-e9c" id="tga-4L-mo0"/>
-                    </connections>
-                </panGestureRecognizer>
                 <tapGestureRecognizer id="74a-DI-nTY">
                     <connections>
                         <action selector="tapComments:" destination="0qm-3D-e9c" id="0dC-hB-QVn"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6D8-HE-LJR">
+                    <connections>
+                        <action selector="panComments:" destination="0qm-3D-e9c" id="tga-4L-mo0"/>
+                    </connections>
+                </panGestureRecognizer>
+                <viewController id="0qm-3D-e9c" customClass="ResponseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T6g-K6-JO1"/>
+                        <viewControllerLayoutGuide type="bottom" id="PCo-6F-VI2"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="252" ambiguous="YES" id="qda-G7-q7X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </scrollView>
+                    <connections>
+                        <segue destination="znd-QO-WKi" kind="modal" identifier="segueToHomeView" modalTransitionStyle="flipHorizontal" id="YE1-xv-XYD"/>
+                    </connections>
+                </viewController>
             </objects>
             <point key="canvasLocation" x="378" y="465"/>
         </scene>

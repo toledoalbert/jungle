@@ -93,7 +93,6 @@
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 1;
     
-    
     //Initialize the animator
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
