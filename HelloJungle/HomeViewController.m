@@ -41,9 +41,9 @@
     [super viewDidLoad];
     
     //This was a test object. Tested successfully with Parse.
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    /*PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    [testObject saveInBackground];*/
     
     ////////SAMPLE DATA/////////
     Post *post1 = [[Post alloc] init];
@@ -87,7 +87,8 @@
     
     //configure swipe view
     _swipeView.alignment = SwipeViewAlignmentCenter;
-    _swipeView.pagingEnabled = YES;
+    _swipeView.pagingEnabled = NO;
+    //_swipeView.wrapEnabled = YES;
     _swipeView.itemsPerPage = 1;
     
     
@@ -146,6 +147,20 @@
     _postImage.image = currentPost.image;
     
     return view;
+}
+
+//This is called when the swipeview stops decelerating.
+- (void)swipeViewDidEndDecelerating:(SwipeView *)swipeView{
+    
+    _swipeView.pagingEnabled = YES;
+    
+}
+
+//This is called when user starts dragging the swipeview.
+- (void)swipeViewWillBeginDragging:(SwipeView *)swipeView{
+    
+    _swipeView.pagingEnabled = NO;
+    
 }
 
 //This is the deallocation method to deallocate the swipe view.
