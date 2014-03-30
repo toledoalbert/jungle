@@ -19,11 +19,19 @@
 //Synthesize all the properties for the viewcontroller
 @synthesize theNewPostView;
 @synthesize animator;
-@synthesize forceBounce;
-@synthesize bounce;
+//@synthesize animatorNewPost;
+//@synthesize animatorMain;
+@synthesize forceBounceNewPost;
+@synthesize bounceNewPost;
+@synthesize snapNewPost;
+@synthesize dynamicItemNewPost;
+@synthesize collisionNewPost;
+
+@synthesize forceBounceComments;
+@synthesize bounceComments;
 @synthesize snapComments;
-@synthesize dynamicItem;
-@synthesize collision;
+@synthesize dynamicItemComments;
+@synthesize collisionComments;
 
 //Response View Attributes
 @synthesize viewComments;
@@ -95,34 +103,36 @@
     _swipeView.itemsPerPage = 1;
     
     //Initialize the animator
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.viewComments];
+    //self.animatorNewPost = [[UIDynamicAnimator alloc] initWithReferenceView:self.theNewPostView];
+    //self.animatorMain = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     //Initialize the bounce behavior
-    bounce = [[BounceBehavior alloc] initWithItems:@[theNewPostView]];
+    bounceNewPost = [[BounceBehavior alloc] initWithItems:@[theNewPostView]];
     
     //set the gravity for bounce
-    [bounce setGravityWithDirection:0.0 andMagnitude:-1.0];
+    [bounceNewPost setGravityWithDirection:0.0 andMagnitude:-1.0];
     
     //set the collision border for bounce
-    [bounce addBorderhWithIdentifer:@"Ground"
+    [bounceNewPost addBorderhWithIdentifer:@"Ground"
                           fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                             toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
     
     //Initialize the custom snap for comments
-    snapComments = [[CustomSnapBehavior alloc] initWithItem:theNewPostView
+    snapNewPost = [[CustomSnapBehavior alloc] initWithItem:theNewPostView
                                              andSnaptoPoint:CGPointMake(160.0, 292.5)];
     
     //Set the damping for the snap
-    [snapComments setDamping:1.2];
+    [snapNewPost setDamping:1.2];
     
     //Create collision for snap
-    collision = [[UICollisionBehavior alloc] initWithItems:@[theNewPostView]];
+    collisionNewPost = [[UICollisionBehavior alloc] initWithItems:@[theNewPostView]];
     
     //Create the forceBounce behavior
-    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[theNewPostView]];
+    forceBounceNewPost = [[ForceBounceBehavior alloc] initWithItems:@[theNewPostView]];
     
     //Add the gravity properties
-    [forceBounce setGravityWithDirection:-1.5*M_PI andMagnitude:15.0];
+    [forceBounceNewPost setGravityWithDirection:-1.5*M_PI andMagnitude:15.0];
     
     
     //////////////////////////////////////////////////////////////////////
@@ -136,13 +146,13 @@
     [viewComments.customTableView setDataSource:self];
     [viewComments.textFieldInput setDelegate:self];
     
-    bounce = [[BounceBehavior alloc] initWithItems:@[viewComments]];
+    bounceNewPost = [[BounceBehavior alloc] initWithItems:@[viewComments]];
     
     //set the gravity for bounce
-    [bounce setGravityWithDirection:0.0 andMagnitude:15.0];
+    [bounceComments setGravityWithDirection:0.0 andMagnitude:15.0];
     
     //set the collision border for bounce
-    [bounce addBorderhWithIdentifer:@"Ground"
+    [bounceComments addBorderhWithIdentifer:@"Ground"
                           fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                             toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
     
@@ -153,14 +163,14 @@
     [snapComments setDamping:1.2];
     
     //Create collision for snap
-    collision = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
+    collisionComments = [[UICollisionBehavior alloc] initWithItems:@[viewComments]];
     
     //Create the forceBounce behaviorself.tableView = [[KBSMoreTableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
     
-    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
+    forceBounceComments = [[ForceBounceBehavior alloc] initWithItems:@[viewComments]];
     
     //Add the gravity properties
-    [forceBounce setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
+    [forceBounceComments setGravityWithDirection:1.5*M_PI andMagnitude:15.0];
     
     self.shadowView = [[UIView alloc]initWithFrame:self.view.frame];
     self.shadowView.backgroundColor = [UIColor blackColor];
@@ -170,8 +180,6 @@
     self.shadowView.alpha = 0.0;
     self.shadowView.hidden = YES;
     currentPosition = 0.0;
-    
-    
     
 }
 
@@ -339,10 +347,10 @@
 {
     
     //Create the forceBounce behavior
-    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[theNewPostView] mode:@"skyMode"];
+    forceBounceNewPost = [[ForceBounceBehavior alloc] initWithItems:@[theNewPostView] mode:@"skyMode"];
     
     //Create a push behavior with two UIViews and a continuous 'push' mode
-    [animator addBehavior:forceBounce];
+    [animator addBehavior:forceBounceNewPost];
     
 }
 
@@ -382,10 +390,10 @@
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
             //Set the velocity for the item to the velocity of the gesture.
-            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            [dynamicItemNewPost addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
             //Add the dynamic behavior to the animator.
-            [animator addBehavior:dynamicItem];
+            [animator addBehavior:dynamicItemNewPost];
             
             break;
             
@@ -400,12 +408,12 @@
             if(velocity.y < 0 ){//|| sender.view.center.y > -280){
                 
                 //Initialize the bounce with sky as the border.
-                [bounce addBorderhWithIdentifer:@"Sky"
+                [bounceNewPost addBorderhWithIdentifer:@"Sky"
                                       fromPoint:CGPointMake(0.0f, -404.0f)
                                         toPoint:CGPointMake(320.0f, -404.0f)];
                 
                 //Add the bounce to the animator.
-                [animator addBehavior:bounce];
+                [animator addBehavior:bounceNewPost];
                 
             }
             //If pan ended while swiping down apply the snap.
@@ -415,17 +423,17 @@
                 [animator removeAllBehaviors];
                 
                 //Create the left and righ boundaries so snap doesn't shake the view.
-                [collision addBoundaryWithIdentifier:@"Left"
+                [collisionNewPost addBoundaryWithIdentifier:@"Left"
                                            fromPoint:CGPointMake(26.0f, -100.0f)
                                              toPoint:CGPointMake(26.0f, 800.0f)];
                 
-                [collision addBoundaryWithIdentifier:@"Right"
+                [collisionNewPost addBoundaryWithIdentifier:@"Right"
                                            fromPoint:CGPointMake(26.0f+268.0f, -100.0f)
                                              toPoint:CGPointMake(26.0f+268.0f, 800.0f)];
                 
                 //Add all needed behaviors to the animator.
-                [animator addBehavior:collision];
-                [animator addBehavior:snapComments];
+                [animator addBehavior:collisionNewPost];
+                [animator addBehavior:snapNewPost];
                 
             }
             break;
@@ -441,10 +449,10 @@
 {
     
     //Create the forceBounce behavior
-    forceBounce = [[ForceBounceBehavior alloc] initWithItems:@[viewComments] mode:@"groundMode"];
+    forceBounceComments = [[ForceBounceBehavior alloc] initWithItems:@[viewComments] mode:@"groundMode"];
     
     //Create a push behavior with two UIViews and a continuous 'push' mode
-    [animator addBehavior:forceBounce];
+    [animator addBehavior:forceBounceComments];
     
 
     
@@ -499,9 +507,9 @@
             CGFloat xVelocity = [sender velocityInView:sender.view].x;
             CGFloat yVelocity = [sender velocityInView:sender.view].y;
             
-            [dynamicItem addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
+            [dynamicItemComments addLinearVelocity:CGPointMake(xVelocity, yVelocity) forItem:sender.view];
             
-            [animator addBehavior:dynamicItem];
+            [animator addBehavior:dynamicItemComments];
             
             
             break;
@@ -519,26 +527,26 @@
                 
                 self.shadowView.alpha = 0.0;
                 
-                [bounce addBorderhWithIdentifer:@"Ground"
+                [bounceComments addBorderhWithIdentifer:@"Ground"
                                       fromPoint:CGPointMake(0.0f, 498.0f+471.0f)
                                         toPoint:CGPointMake(320.0f, 498.0f+471.0f)];
                 
                 
-                [animator addBehavior:bounce];
+                [animator addBehavior:bounceComments];
                 
             }
             else{
                 
-                [collision addBoundaryWithIdentifier:@"Left"
+                [collisionComments addBoundaryWithIdentifier:@"Left"
                                            fromPoint:CGPointMake(26.0f, 200.0f)
                                              toPoint:CGPointMake(26.0f, 800.0f)];
                 
-                [collision addBoundaryWithIdentifier:@"Right"
+                [collisionComments addBoundaryWithIdentifier:@"Right"
                                            fromPoint:CGPointMake(26.0f+268.0f, 200.0f)
                                              toPoint:CGPointMake(26.0f+268.0f, 800.0f)];
                 
                 
-                [animator addBehavior:collision];
+                [animator addBehavior:collisionComments];
                 [animator addBehavior:snapComments];
                 self.shadowView.alpha = 0.6;
                 

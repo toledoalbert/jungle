@@ -33,11 +33,11 @@
 @property (strong, nonatomic) IBOutlet CommentsView *viewComments;
 
 //Attributes - Behaviors
-@property (strong, nonatomic) BounceBehavior *bounce;
-@property (strong, nonatomic) ForceBounceBehavior *forceBounce;
-@property (strong, nonatomic) CustomSnapBehavior *snapComments;
-@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
-@property (strong, nonatomic) UICollisionBehavior *collision;
+@property (strong, nonatomic) BounceBehavior *bounceNewPost;
+@property (strong, nonatomic) ForceBounceBehavior *forceBounceNewPost;
+@property (strong, nonatomic) CustomSnapBehavior *snapNewPost;
+@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItemNewPost;
+@property (strong, nonatomic) UICollisionBehavior *collisionNewPost;
 @property (strong, nonatomic) UIView *shadowView;
 
 //Array
@@ -59,13 +59,13 @@
 
 
 //Attributes Behaviors/
-/*
-@property (strong, nonatomic) BounceBehavior *bounce;
-@property (strong, nonatomic) ForceBounceBehavior *forceBounce;
+
+@property (strong, nonatomic) BounceBehavior *bounceComments;
+@property (strong, nonatomic) ForceBounceBehavior *forceBounceComments;
 @property (strong, nonatomic) CustomSnapBehavior *snapComments;
-@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItem;
-@property (strong, nonatomic) UICollisionBehavior *collision;
- */
+@property (strong, nonatomic) UIDynamicItemBehavior *dynamicItemComments;
+@property (strong, nonatomic) UICollisionBehavior *collisionComments;
+
 
 
 //Attributes for data
@@ -81,6 +81,8 @@
 
 //Attributes - Animator
 @property (strong, nonatomic) UIDynamicAnimator *animator;
+//@property (strong, nonatomic) UIDynamicAnimator *animatorNewPost;
+//@property (strong, nonatomic) UIDynamicAnimator *animatorMain;
 
 //Attributes gestures
 - (IBAction)tapGesture:(id)sender;
